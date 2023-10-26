@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private Camera localCamera;
- 
+
+    public Dictionary<Vector2Int, Tile> Tiles { get; set; }
 
     private Vector3 worldStart;
     private Vector3 first;
@@ -22,11 +23,10 @@ public class LevelManager : MonoBehaviour
 
     private string mapFileName = "Level1";
     private float tileSize ;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-
         tileSize = tile1.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
         worldStart = localCamera.ScreenToWorldPoint(new Vector3(0, Screen.height));
         first = worldStart;
@@ -35,13 +35,7 @@ public class LevelManager : MonoBehaviour
         first.z = 0;
 
         LoadMap();
-        
-
-        //Instantiate(tile1, first, Quaternion.identity);
     }
-
-
-
 
     void LoadMap()
     {
@@ -61,11 +55,12 @@ public class LevelManager : MonoBehaviour
                     tile = Instantiate(tile1, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 1;
                 }
-                else if (tileChar == '0')
-                {
+                else {
                     tile = Instantiate(tile2, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 0;
                 }
+
+                Tiles.Add(new Vector2Int(i, j), tile);
             }
         }
     }
