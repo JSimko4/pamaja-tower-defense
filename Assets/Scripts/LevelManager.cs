@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
         first.x = first.x + tileSize / 2;
         first.y = first.y - tileSize / 2;
         first.z = 0;
-
+        Tiles = new Dictionary<Vector2Int, Tile>();
         LoadMap();
     }
 
