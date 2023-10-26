@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
     void LoadMap()
     {
         TextAsset mapText = Resources.Load<TextAsset>(mapFileName);
-        string[] mapLines = mapText.text.Split('\n');
+        string[] mapLines = mapText.text.Split('\n', System.StringSplitOptions.RemoveEmptyEntries);
 
         for (int i = 0; i < mapLines.Length; i++)
         {
@@ -50,17 +50,20 @@ public class LevelManager : MonoBehaviour
                 Vector2 spawnPosition = new Vector2(first.x + j * tileSize, first.y -i * tileSize); // Negative on 'i' to start from top
 
                 Tile tile;
+
                 if (tileChar == '1')
                 {
                     tile = Instantiate(tile1, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 1;
+                    Tiles.Add(new Vector2Int(i, j), tile);
                 }
-                else {
+                else if(tileChar == '0') {
                     tile = Instantiate(tile2, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 0;
+                    Tiles.Add(new Vector2Int(i, j), tile);
                 }
 
-                Tiles.Add(new Vector2Int(i, j), tile);
+                
             }
         }
     }
