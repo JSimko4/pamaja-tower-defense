@@ -12,12 +12,10 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     private Camera localCamera;
-
-
-
  
 
     private Vector3 worldStart;
+    private Vector3 first;
 
     public GameObject roadTile; 
     public GameObject otherTile; 
@@ -30,16 +28,16 @@ public class LevelManager : MonoBehaviour
         
 
         tileSize = tile1.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
-        LoadMap();
         worldStart = localCamera.ScreenToWorldPoint(new Vector3(0, Screen.height));
-
-
-        Vector3 first =  worldStart;
-        first.x = first.x + tileSize /2;
-        first.y = first.y - tileSize /2;
+        first = worldStart;
+        first.x = first.x + tileSize / 2;
+        first.y = first.y - tileSize / 2;
         first.z = 0;
 
-        Instantiate(tile1, first, Quaternion.identity);
+        LoadMap();
+        
+
+        //Instantiate(tile1, first, Quaternion.identity);
     }
 
 
@@ -55,7 +53,7 @@ public class LevelManager : MonoBehaviour
             for (int j = 0; j < mapLines[i].Length; j++)
             {
                 char tileChar = mapLines[i][j];
-                Vector2 spawnPosition = new Vector2(j * tileSize, -i * tileSize); // Negative on 'i' to start from top
+                Vector2 spawnPosition = new Vector2(first.x + j * tileSize, first.y -i * tileSize); // Negative on 'i' to start from top
 
                 if (tileChar == '1')
                 {
