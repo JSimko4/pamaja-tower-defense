@@ -55,13 +55,16 @@ public class LevelManager : MonoBehaviour
                 char tileChar = mapLines[i][j];
                 Vector2 spawnPosition = new Vector2(first.x + j * tileSize, first.y -i * tileSize); // Negative on 'i' to start from top
 
+                Tile tile;
                 if (tileChar == '1')
                 {
-                    Instantiate(tile1, spawnPosition, Quaternion.identity);
+                    tile = Instantiate(tile1, spawnPosition, Quaternion.identity).GetComponent<Tile>();
+                    tile.TileType = 1;
                 }
                 else if (tileChar == '0')
                 {
-                    Instantiate(tile2, spawnPosition, Quaternion.identity);
+                    tile = Instantiate(tile2, spawnPosition, Quaternion.identity).GetComponent<Tile>();
+                    tile.TileType = 0;
                 }
             }
         }
