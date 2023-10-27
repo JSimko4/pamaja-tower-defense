@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField]
     private GameObject tile1;
@@ -23,6 +23,8 @@ public class LevelManager : MonoBehaviour
 
     private string mapFileName = "Level1";
     private float tileSize ;
+
+
 
     // Start is called before the first frame update
     void Start()
