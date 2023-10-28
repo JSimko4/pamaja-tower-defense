@@ -27,21 +27,26 @@ public class Tower : MonoBehaviour
 
     public Monster Target { get => MonstersInRange[0]; }
 
+    private bool isPlaced = false;
+
     public void RangeRescale()
     {
-        transform.localScale = new Vector3(Range, Range);
+        var initialScaleRange = 4;
+        transform.localScale = new Vector3(transform.localScale.x / initialScaleRange * Range, transform.localScale.y /initialScaleRange * Range);
     }
     // Start is called before the first frame update
     void Start()
     {
         MonstersInRange = new List<Monster>();
+        isPlaced = false;
         RangeRescale();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Attack();
+        if(isPlaced)
+            Attack();
     }
     private void Attack()
     {

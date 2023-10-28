@@ -16,6 +16,15 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
         }
     }
 
+
+    private GameObject prefabInstance;
+
+    private Vector3 SpawnPosition {
+        get {
+            return new Vector3(Tile.ClickedTile.transform.position.x, Tile.ClickedTile.transform.position.y, -1);
+        }
+    }
+
     void Start()
     {
         
@@ -34,11 +43,16 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        if (!prefabInstance)
+            prefabInstance = Instantiate(towerPrefab);
+
+        prefabInstance.SetActive(true);
+        prefabInstance.transform.position = SpawnPosition;
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        
+        prefabInstance.SetActive(false);
     }
 }
