@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
@@ -8,6 +9,12 @@ public class UIManager : Singleton<UIManager>
     private GameObject towersPanel;
 
     public GameObject TowersPanel { get => towersPanel; }
+
+    [SerializeField]
+    private GameObject nextWaveButton;
+
+    [SerializeField]
+    private TextMeshProUGUI waveText;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +34,20 @@ public class UIManager : Singleton<UIManager>
 
     public void HideTowersPanel() {
         towersPanel.SetActive(false);    
+    }
+
+    public void ShowNextWaveButton()
+    {
+        nextWaveButton.SetActive(true);
+    }
+
+    public void HideNextWaveButton()
+    {
+        nextWaveButton.SetActive(false);
+    }
+
+    public void SetWave(int currentWave, int totalWaves)
+    {
+        waveText.text = "Wave: " + currentWave + " / " + totalWaves;
     }
 }

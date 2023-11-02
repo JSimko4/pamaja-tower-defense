@@ -77,7 +77,8 @@ public class LevelManager : Singleton<LevelManager>
         //TODO programatically set
         starts = new List<Tile>();
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
-        end = Tiles.GetValueOrDefault(new Vector2Int(9, 6));
+        starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 11)));
+        end = Tiles.GetValueOrDefault(new Vector2Int(6, 6));
     }
 
     // Update is called once per frame
