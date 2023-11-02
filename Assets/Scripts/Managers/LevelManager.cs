@@ -18,13 +18,18 @@ public class LevelManager : Singleton<LevelManager>
     private Vector3 worldStart;
     private Vector3 first;
 
-    public GameObject roadTile; 
-    public GameObject otherTile; 
-
     private string mapFileName = "Level1";
     private float tileSize ;
 
+    private List<Tile> starts;
+    private Tile end;
 
+    public Tile End { get { return end; } }
+
+    public Tile getStartTile(int index)
+    {
+        return starts[index];
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +73,11 @@ public class LevelManager : Singleton<LevelManager>
                 
             }
         }
+
+        //TODO programatically set
+        starts = new List<Tile>();
+        starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
+        end = Tiles.GetValueOrDefault(new Vector2Int(9, 6));
     }
 
     // Update is called once per frame
