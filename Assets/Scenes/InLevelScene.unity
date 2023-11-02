@@ -378,6 +378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1289932769}
     m_Modifications:
+    - target: {fileID: 1848830713795138744, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
+      propertyPath: towerPrefab
+      value: 
+      objectReference: {fileID: 2669264532520963789, guid: 321092c4c3ce92e4ca4a33befd16d228, type: 3}
     - target: {fileID: 5782434065509577217, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -562,8 +566,6 @@ MonoBehaviour:
   tile1: {fileID: 1987355919035506046, guid: ba0577d37ce21ae4cb4db0853436e062, type: 3}
   tile2: {fileID: 1987355919035506046, guid: 2b3fbd1035b9332458a8b4002a1bff25, type: 3}
   localCamera: {fileID: 1210681946}
-  roadTile: {fileID: 0}
-  otherTile: {fileID: 0}
 --- !u!4 &1368582759
 Transform:
   m_ObjectHideFlags: 0
@@ -763,26 +765,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953347567}
-  - component: {fileID: 1953347566}
+  - component: {fileID: 1953347568}
   m_Layer: 0
-  m_Name: TowerSelectionManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1953347566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953347565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4142cc6531ca441bbc33dfca391796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1953347567
 Transform:
   m_ObjectHideFlags: 0
@@ -798,6 +788,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1953347568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953347565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12f2bf45de0cd146a05e26029bffc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towersPanel: {fileID: 1289932768}
 --- !u!1001 &7578877333896628730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -806,6 +809,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1289932769}
     m_Modifications:
+    - target: {fileID: 1848830713795138744, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
+      propertyPath: towerPrefab
+      value: 
+      objectReference: {fileID: 2669264532520963789, guid: 321092c4c3ce92e4ca4a33befd16d228, type: 3}
     - target: {fileID: 5782434065509577217, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
