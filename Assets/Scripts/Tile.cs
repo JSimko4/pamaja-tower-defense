@@ -35,6 +35,14 @@ public class Tile : MonoBehaviour
     }
 
 
+    public void PlaceTower(Tower tower)
+    {
+        ColorTile(defaultColor);
+        Tower = tower;
+        //reset clicked tile after placing tower
+        ClickedTile = null;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

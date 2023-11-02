@@ -38,7 +38,15 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        Tower tower = prefabInstance.GetComponentInChildren<Tower>();
+        // not enough gold
+        if (GameManager.Instance.Gold < tower.Price)
+            return;
+
+        GameManager.Instance.BuyTower(tower);
+        UIManager.Instance.HideTowersPanel();
+
+        prefabInstance = null;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -53,6 +61,7 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        prefabInstance.SetActive(false);
+        if(prefabInstance)
+            prefabInstance.SetActive(false);
     }
 }

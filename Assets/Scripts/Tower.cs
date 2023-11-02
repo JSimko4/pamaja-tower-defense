@@ -13,6 +13,10 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private float attackCooldown;
 
+    [SerializeField]
+    private int price;
+
+    public int Price { get => price; }
     public float Range { get => range; }
 
     public int Damage { get => damage; }
@@ -25,9 +29,15 @@ public class Tower : MonoBehaviour
 
     private List<Monster> MonstersInRange;
 
-    public Monster Target { get => MonstersInRange[0]; }
+    public Monster Target { get => MonstersInRange.Count > 0 ? MonstersInRange[0] : null; }
 
     private bool isPlaced = false;
+
+    public void Place()
+    {
+        Tile.ClickedTile.PlaceTower(this);
+        isPlaced = true;
+    }
 
     public void RangeRescale()
     {
