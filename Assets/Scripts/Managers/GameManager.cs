@@ -54,7 +54,7 @@ public class GameManager : Singleton<GameManager>
         // meaning, spawn monster0, then monster1, then wait 2s, then again monster 0 from route1 & from route2 first wait 7.5s, then spawn monster1...
         string[] spawns = {
             "1,0,1,2s,0",
-            "7.5s,1,0"
+            "7s,1,0"
         };
 
         // start multiple threads because monsters can come from multiple spawns in one wave
@@ -91,7 +91,7 @@ public class GameManager : Singleton<GameManager>
             }
             else if (spawnString[i] == 's')     // wait for seconds
             {
-                wait = true;
+                wait = true; 
                 yield return new WaitForSeconds(float.Parse(value));
             }
         }
