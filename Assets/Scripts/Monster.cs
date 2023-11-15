@@ -22,18 +22,35 @@ public class Monster : MonoBehaviour
     public int Damage { get => damage; }
     public int AttackCooldown { get => attackCooldown; }
 
+    public int MaxHealth { get; private set; }
+    public float MaxSpeed { get; private set; }
+
     private Vector3 destination { get => LevelManager.Instance.End.transform.position; }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        MaxHealth = health;
+        MaxSpeed = speed;
+        isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+    }
+
+
+    public void TakeDamage(Tower tower)
+    {
+        health -= tower.Damage;
+
+        if(health <= 0)
+        {
+            isAlive = false;
+            Destroy(gameObject);
+        }
     }
 
     private void Move()

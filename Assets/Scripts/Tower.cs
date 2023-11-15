@@ -16,6 +16,13 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private int price;
 
+    [SerializeField]
+    private float projectileSpeed;
+
+    [SerializeField]
+    private GameObject projectilePrefab;
+
+    public float ProjectileSpeed { get => projectileSpeed; }
     public int Price { get => price; }
     public float Range { get => range; }
 
@@ -81,7 +88,9 @@ public class Tower : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        //TODO
+        Debug.Log("Spawn projectile");
+        var projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
+        projectile.Init(this);
     }
 
 
@@ -89,6 +98,7 @@ public class Tower : MonoBehaviour
     {
         if (other.tag == "Monster")
         {
+            Debug.Log("monster Enter");
             MonstersInRange.Add(other.GetComponent<Monster>());
         }
     }
