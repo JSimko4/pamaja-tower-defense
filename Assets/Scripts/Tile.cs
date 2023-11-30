@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour
 {
     public static Tile ClickedTile;
 
-    public Vector2Int mapCoordinates; // x, y coordinates in LevelManager map
+    public Vector2Int mapCoordinates; // row, column indexes (coordinates) in LevelManager dictionary
     public int TileType { get; set; }
 
     public static int PathTileType { get => 1; }
