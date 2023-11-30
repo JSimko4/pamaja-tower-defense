@@ -8,7 +8,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private GameObject towersPanel;
 
+    [SerializeField]
+    private GameObject alliesPanel;
+
     public GameObject TowersPanel { get => towersPanel; }
+    public GameObject AlliesPanel { get => alliesPanel; }
 
     [SerializeField]
     private GameObject nextWaveButton;

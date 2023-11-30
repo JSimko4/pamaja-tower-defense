@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField]
     private List<GameObject> monsterPrefabs;
+    [SerializeField]
+    private List<GameObject> allyPrefabs;
 
     public int Gold { get { return gold; } }
     public int Lives { get { return lives; } }

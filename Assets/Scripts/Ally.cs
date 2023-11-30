@@ -9,12 +9,18 @@ public class Ally : MonoBehaviour
     [SerializeField]
     private GameObject unitPrefab;
 
-    private Tile spawnLocation;
+    [SerializeField]
+    private int health;
+
+    [SerializeField]
+    private int price;
+
+    public int Price { get => price; }
 
     // Start is called before the first frame update
     void Start()
     {
-      // spawnLocation = LevelManager.Instance.End;
+
     }
 
     // Update is called once per frame
