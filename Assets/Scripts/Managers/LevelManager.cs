@@ -62,6 +62,7 @@ public class LevelManager : Singleton<LevelManager>
                 {
                     tile = Instantiate(tile1, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 1;
+                    tile.mapCoordinates = new Vector2Int(i, j);
                     Tiles.Add(new Vector2Int(i, j), tile);
                 }
                 else if(tileChar == '0') {
@@ -79,11 +80,5 @@ public class LevelManager : Singleton<LevelManager>
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 11)));
         end = Tiles.GetValueOrDefault(new Vector2Int(6, 6));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

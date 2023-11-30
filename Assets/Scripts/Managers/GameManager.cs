@@ -105,8 +105,13 @@ public class GameManager : Singleton<GameManager>
             Quaternion.identity
         ).GetComponent<Monster>();
 
+        monster.startTile = LevelManager.Instance.getStartTile(path_id);
 
         yield return new WaitForSeconds(0.2f);
+    }
+
+    public void DecreaseLives(int value) {
+        lives -= value;
     }
 
 }

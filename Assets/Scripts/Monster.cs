@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +26,10 @@ public class Monster : MonoBehaviour
     public int MaxHealth { get; private set; }
     public float MaxSpeed { get; private set; }
 
-    private Vector3 destination { get => LevelManager.Instance.End.transform.position; }
+    public Path path;
+    public Tile DestinationTile { get => LevelManager.Instance.End; }
+    public Tile startTile;
+    public Tile nextTile;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,8 @@ public class Monster : MonoBehaviour
         MaxHealth = health;
         MaxSpeed = speed;
         isAlive = true;
+        path = PathFinding.Instance.GetPath(startTile, DestinationTile);
+        nextTile = startTile;
     }
 
     // Update is called once per frame
@@ -55,6 +61,22 @@ public class Monster : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, destination, Speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, nextTile.transform.position, Speed * Time.deltaTime);
+        // Get next tile after we already moved to the tile we were heading to
+        if (transform.position == nextTile.transform.position)
+        {
+            Tile potentionalNextTile = path.GetNextTile();
+            if (potentionalNextTile != null)
+            {
+                nextTile = potentionalNextTile;
+            }
+            // Infiltrate base 
+            else
+            {
+                int lives = 1;
+                GameManager.Instance.DecreaseLives(lives);
+                Destroy(gameObject);
+            }
+        }
     }
 }

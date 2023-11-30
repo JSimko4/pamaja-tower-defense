@@ -7,15 +7,14 @@ public class Tile : MonoBehaviour
 {
     public static Tile ClickedTile;
 
+    public Vector2Int mapCoordinates; // x, y coordinates in LevelManager map
     public int TileType { get; set; }
 
     public static int PathTileType { get => 1; }
     public static int EmptyTileType { get => 0; }
 
     
-
     private SpriteRenderer spriteRenderer;
-
     public Tower Tower { get; private set; }
 
     public bool IsEmpty { get => TileType == EmptyTileType; }
