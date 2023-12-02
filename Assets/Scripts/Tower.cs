@@ -38,6 +38,9 @@ public class Tower : MonoBehaviour
 
     public Monster Target { get => MonstersInRange.Count > 0 ? MonstersInRange[0] : null; }
 
+
+    public List<Monster> MonstersInTowerRange { get => MonstersInRange; }
+
     private bool isPlaced = false;
 
     public void Place()
@@ -88,7 +91,6 @@ public class Tower : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        Debug.Log("Spawn projectile");
         var projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
         projectile.Init(this);
     }
@@ -98,7 +100,6 @@ public class Tower : MonoBehaviour
     {
         if (other.tag == "Monster")
         {
-            Debug.Log("monster Enter");
             MonstersInRange.Add(other.GetComponent<Monster>());
         }
     }
