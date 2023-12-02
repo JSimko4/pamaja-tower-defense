@@ -69,7 +69,14 @@ public class Tile : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if(Tower)
+        // cast the spell
+        if (SkillButton.ClickedSkillPrefab)
+        {
+            SkillButton.CastSkill();
+            return;
+        }
+
+        if (Tower)
         {
             // TODO show tower range, tower tooltip...
             return;
