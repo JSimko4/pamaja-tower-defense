@@ -4,14 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-public class Ally : MonoBehaviour
+public class Ally : Unit
 {
-    [SerializeField]
-    private GameObject unitPrefab;
-
-    [SerializeField]
-    private int health;
-
     [SerializeField]
     private int price;
 
@@ -26,6 +20,7 @@ public class Ally : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // CHECK IF GATHER POINT TILE CHANGED
         
     }
 }

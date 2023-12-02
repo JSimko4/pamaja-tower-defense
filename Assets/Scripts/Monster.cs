@@ -3,41 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+public class Monster : Unit
 {
-    private bool isAlive;
-    public bool IsAlive { get => isAlive; }
-
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private int damage;
-    [SerializeField]
-    private int attackCooldown;
-
-
-    public float Speed { get => speed; }
-    public int Health { get => health; }
-    public int Damage { get => damage; }
-    public int AttackCooldown { get => attackCooldown; }
-
-    public int MaxHealth { get; private set; }
-    public float MaxSpeed { get; private set; }
-
-    public Path path;
-    public Tile DestinationTile { get => LevelManager.Instance.End; }
-    public Tile startTile;
-    public Tile nextTile;
-
     // Start is called before the first frame update
     void Start()
     {
-        MaxHealth = health;
-        MaxSpeed = speed;
-        isAlive = true;
-        path = PathFinding.Instance.GetPath(startTile, DestinationTile);
+        destinationTile = LevelManager.Instance.End;
+        path = PathFinding.Instance.GetPath(startTile, destinationTile);
         nextTile = startTile;
     }
 
