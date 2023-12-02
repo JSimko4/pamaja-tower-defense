@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Monster : Unit
 {
     private float stunnedDuration;
@@ -10,12 +11,13 @@ public class Monster : Unit
 
     private bool canAttack = false;
     private float attackTimer;
-
+    private SpriteRenderer spriteRenderer;
     private bool isStunned { get => stunnedDuration > 0; }
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         destinationTile = LevelManager.Instance.End;
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
         nextTile = startTile;
@@ -88,7 +90,17 @@ public class Monster : Unit
 
     private void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, nextTile.transform.position, Speed * Time.deltaTime);
+        Vector2 currentPosition = transform.position;
+        Vector2 targetPosition = nextTile.transform.position;
+
+        // Flip sprite based on direction
+        if (targetPosition.x > currentPosition.x)
+            spriteRenderer.flipX = false; // moving right
+        else if (targetPosition.x < currentPosition.x)
+            spriteRenderer.flipX = true; // moving left
+
+        // Existing movement code
+        transform.position = Vector2.MoveTowards(currentPosition, targetPosition, Speed * Time.deltaTime);
         // Get next tile after we already moved to the tile we were heading to
         if (transform.position == nextTile.transform.position)
         {
