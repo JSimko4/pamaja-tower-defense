@@ -21,14 +21,11 @@ public class Explosion : MonoBehaviour
 
         initialized = true;
 
-        Debug.Log("Explosion INIT");
-
         Invoke("Destruct", disappearAfter);
     }
 
     private void Destruct()
     {
-        Debug.Log("Explosion destroy");
         Destroy(gameObject);
     }
 

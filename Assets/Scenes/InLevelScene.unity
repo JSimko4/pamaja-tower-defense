@@ -1116,7 +1116,7 @@ PrefabInstance:
     - target: {fileID: 5034531125087685152, guid: 70a853bb691e3fd4abcc7ca7e489d834, type: 3}
       propertyPath: skillPrefab
       value: 
-      objectReference: {fileID: 3954016814175731291, guid: cff6386ce6357474cbe4c80977d5a34d, type: 3}
+      objectReference: {fileID: 7191008375722843823, guid: 2d3f68b5f540a6e4aabb533d698f9b85, type: 3}
     - target: {fileID: 5650784400233519215, guid: 70a853bb691e3fd4abcc7ca7e489d834, type: 3}
       propertyPath: m_Name
       value: SkillButton (1)
