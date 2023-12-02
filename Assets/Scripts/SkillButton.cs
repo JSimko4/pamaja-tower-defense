@@ -26,11 +26,17 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
     public static void CastSkill()
     {
-        //TODO check if enough mana + drain mana + maybe CD idk
+        var requiredMana = ClickedSkillPrefab.GetComponent<Skill>().ManaCost;
 
-        var skill = Instantiate(ClickedSkillPrefab, Hover.Instance.HoverPrefabInstance.transform.position, Quaternion.identity).GetComponent<Skill>();
+        if(GameManager.Instance.Mana >= requiredMana)
+        {
+            GameManager.Instance.Mana -= requiredMana;
+            var skill = Instantiate(ClickedSkillPrefab, Hover.Instance.HoverPrefabInstance.transform.position, Quaternion.identity).GetComponent<Skill>();
+        }
+       
         //reset hover prefab
         Hover.Instance.SetHoverPrefabInstance(null);
+        ClickedSkillPrefab = null;
     }
 
     public void OnPointerClick(PointerEventData eventData)

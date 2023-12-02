@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager>
 
     public int Gold { get { return gold; } }
     public int Lives { get { return lives; } }
-    public int Mana { get { return mana; } }
+    public int Mana { get { return mana; } set { mana = value; } }
 
 
 
