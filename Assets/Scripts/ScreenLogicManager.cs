@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EntryScreenLogic : MonoBehaviour
+public class SceneChangeManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public void LoagGame()
+    public void LoadLevelScene()
     {
         SceneManager.LoadScene("InLevelScene");
+    }
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("EntryScreen");
     }
     void Start()
     {
