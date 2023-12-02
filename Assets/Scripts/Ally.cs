@@ -111,6 +111,10 @@ public class Ally : Unit
         }
     }
 
+
+    // TODO this needs to be reworked
+    // in a way that we can check on every update frame
+    // if there are any enemies colliding with the Ally
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Monster" && IsAtGatherTile && CanFightMoreMonsters)
