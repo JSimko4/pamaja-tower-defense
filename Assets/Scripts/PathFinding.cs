@@ -15,6 +15,11 @@ public class PathFinding : Singleton<PathFinding>
         {
             return new Path(path);
         }
+        // Already on the end tile
+        else if (startTile == endTile)
+        {
+            return new Path(path);
+        }
 
         // Call the recursive backtracking function
         // We can replace this function with the other path finding strategy later on

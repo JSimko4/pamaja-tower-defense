@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class Ally : Unit
 {
@@ -44,11 +39,18 @@ public class Ally : Unit
         }
     }
 
-    // GET NEW PATH AND START RUNNING TO IT IF GATHER POINT CHANGED
     private void getPathToGatherPoint()
     {
         path = PathFinding.Instance.GetPath(lastTile, GatherTile);
+        GatherTile.PresentAllies.Remove(this);
+        Debug.Log("removing ally from gather tile");
         previousGatherTile = GatherTile;
+    }
+
+    public void addAllyToGatherTile()
+    {
+        Debug.Log("reached gather");
+        GatherTile.PresentAllies.Add(this);
     }
 
     private void Move()
@@ -61,10 +63,16 @@ public class Ally : Unit
             {
                 lastTile = nextTile;
 
+                // Reached gather tile
+                if (GatherTile == lastTile) addAllyToGatherTile();
+
+                // Get new path if gather tile changed
                 if (GatherTile != previousGatherTile) getPathToGatherPoint();
+
                 nextTile = path.GetNextTile();
             }
         }
+        // Get new path if gather tile changed
         else if (GatherTile != previousGatherTile)
         {
             getPathToGatherPoint();

@@ -19,6 +19,7 @@ public class Tile : MonoBehaviour
 
     
     public Tower Tower { get; private set; }
+    public List<Ally> PresentAllies = new List<Ally>();
 
     public bool IsEmpty { get => TileType == EmptyTileType; }
 
