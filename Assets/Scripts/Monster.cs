@@ -115,7 +115,6 @@ public class Monster : Unit
     public void ApplySlow(int percentage)
     {
         speed = MaxSpeed * (1 - percentage/100f);
-        Debug.Log("Slow" + speed + "-" + MaxSpeed);
     }
 
     public void RemoveSlow()

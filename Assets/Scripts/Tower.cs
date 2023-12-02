@@ -91,7 +91,6 @@ public class Tower : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        Debug.Log("Spawn projectil");
         var projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
         projectile.Init(this);
     }
@@ -99,7 +98,6 @@ public class Tower : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter " + other.tag);
         if (other.tag == "Monster")
         {
             MonstersInRange.Add(other.GetComponent<Monster>());
