@@ -17,8 +17,9 @@ public class Ally : Unit
     public int Price { get => price; }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
         nextTile = startTile;
         lastTile = startTile;
@@ -69,5 +70,13 @@ public class Ally : Unit
             getPathToGatherPoint();
             nextTile = path.GetNextTile();
         }
+    }
+
+    public void ApplyHeal(int amount)
+    {
+        var newHealth = health + amount;
+        if(newHealth > MaxHealth)
+            newHealth = MaxHealth;
+        health = newHealth;
     }
 }

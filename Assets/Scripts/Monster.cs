@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Monster : Unit
 {
+    private float stunnedDuration;
+
+    private bool isStunned { get => stunnedDuration > 0; }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         destinationTile = LevelManager.Instance.End;
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
         nextTile = startTile;
@@ -16,7 +20,24 @@ public class Monster : Unit
     // Update is called once per frame
     void Update()
     {
+        // do not move when stunned
+        if (isStunned)
+        {
+            stunnedDuration -= Time.deltaTime;
+            return;
+        }
         Move();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            isAlive = false;
+            Destroy(gameObject);
+        }
     }
 
 
@@ -52,9 +73,15 @@ public class Monster : Unit
         }
     }
 
+    public void ApplyStun(float duration)
+    {
+        stunnedDuration = duration;
+    }
+
     public void ApplySlow(int percentage)
     {
         speed = MaxSpeed * (1 - percentage/100f);
+        Debug.Log("Slow" + speed + "-" + MaxSpeed);
     }
 
     public void RemoveSlow()

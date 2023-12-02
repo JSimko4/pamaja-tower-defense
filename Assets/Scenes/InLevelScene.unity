@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 1848830713795138744, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: towerPrefab
       value: 
-      objectReference: {fileID: 3173652902975774914, guid: 091ca57428a01794eb691d1486686a81, type: 3}
+      objectReference: {fileID: 2669264532520963789, guid: 321092c4c3ce92e4ca4a33befd16d228, type: 3}
     - target: {fileID: 2147955280920633013, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: m_text
       value: Sniper Tower
@@ -623,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 1848830713795138744, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: towerPrefab
       value: 
-      objectReference: {fileID: 2669264532520963789, guid: 321092c4c3ce92e4ca4a33befd16d228, type: 3}
+      objectReference: {fileID: 3173652902975774914, guid: 091ca57428a01794eb691d1486686a81, type: 3}
     - target: {fileID: 2147955280920633013, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: m_text
       value: Ice Tower
@@ -1736,7 +1736,7 @@ PrefabInstance:
     - target: {fileID: 1848830713795138744, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: towerPrefab
       value: 
-      objectReference: {fileID: 2669264532520963789, guid: 321092c4c3ce92e4ca4a33befd16d228, type: 3}
+      objectReference: {fileID: 9139182788378265080, guid: c7ae001905b6032448cbc891172cfbb9, type: 3}
     - target: {fileID: 2147955280920633013, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: m_text
       value: Wizard Tower

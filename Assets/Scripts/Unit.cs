@@ -31,7 +31,7 @@ public abstract class Unit : MonoBehaviour
     public Path path;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         MaxHealth = health;
         MaxSpeed = speed;
