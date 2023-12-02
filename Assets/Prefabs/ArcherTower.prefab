@@ -307,6 +307,6 @@ MonoBehaviour:
   damage: 10
   attackCooldown: 1
   price: 0
-  projectileSpeed: 10
+  projectileSpeed: 3
   projectilePrefab: {fileID: 2666235717455547974, guid: 9f9935c2388bb2144a9f8b936a71fbd4, type: 3}
   arrowTargetsCount: 3
