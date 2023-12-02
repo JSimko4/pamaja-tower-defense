@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 52433785}
   - component: {fileID: 52433784}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: LevelsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 452757780}
         m_TargetAssemblyTypeName: SceneChangeManager, Assembly-CSharp
-        m_MethodName: LoadLevelScene
+        m_MethodName: LoadlevelsScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 452757779}
   - component: {fileID: 452757780}
   m_Layer: 5
-  m_Name: ButtonLogic
+  m_Name: LevelsButtonLogic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

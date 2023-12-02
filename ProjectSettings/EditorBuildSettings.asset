@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/EntryScreen.unity
     guid: ed87efdd37a38e741b67ca9f167287a0
   - enabled: 1
+    path: Assets/Scenes/TownScreen.unity
+    guid: 076a03af10c8df44c9abcffe8a71fca6
+  - enabled: 1
+    path: Assets/Scenes/LevelsScreen.unity
+    guid: 4f0ee360bdd77534eba82d6e5def52e8
+  - enabled: 1
     path: Assets/Scenes/InLevelScene.unity
     guid: f80e20c800a95bc4cab5fac872161254
   - enabled: 0
