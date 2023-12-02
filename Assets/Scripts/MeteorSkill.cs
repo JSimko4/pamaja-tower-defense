@@ -32,7 +32,6 @@ public class MeteorSkill : Skill
     {
         transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
 
-        Debug.Log("Meteor move " + transform.position + " - " + destination);
         if(transform.position == destination)
         {
             Explode();
