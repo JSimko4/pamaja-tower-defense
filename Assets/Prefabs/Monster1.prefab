@@ -173,5 +173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   health: 100
-  damage: 10
-  attackCooldown: 2
+  damage: 25
+  attackCooldown: 1
+  destinationTile: {fileID: 0}
+  startTile: {fileID: 0}
+  nextTile: {fileID: 0}
+  fightingAlly: {fileID: 0}
