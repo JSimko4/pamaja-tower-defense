@@ -37,6 +37,8 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler
             return;
         }
 
+        ally.startTile = LevelManager.Instance.End;
+        ally.destinationTile = Ally.GatherTile;
         prefabInstance.transform.position = SpawnPosition;
     }
 }

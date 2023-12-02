@@ -23,10 +23,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private List<Tile> starts;
     private Tile end;
-    private Tile allyGatherTile;
-
     public Tile End { get { return end; } }
-    public Tile AllyGatherTile { get { return end; } }
 
     public Tile getStartTile(int index)
     {
@@ -82,6 +79,6 @@ public class LevelManager : Singleton<LevelManager>
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 11)));
         end = Tiles.GetValueOrDefault(new Vector2Int(6, 6));
-        allyGatherTile = end;
+        Ally.GatherTile = end;
     }
 }

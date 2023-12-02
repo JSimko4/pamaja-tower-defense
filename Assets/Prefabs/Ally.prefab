@@ -143,6 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfbabff8b56c2a4197ff55d7efd31ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 1653595176801536041}
+  speed: 10
   health: 90
+  damage: 0
+  attackCooldown: 0
+  destinationTile: {fileID: 0}
+  startTile: {fileID: 0}
+  nextTile: {fileID: 0}
   price: 0
+  lastTile: {fileID: 0}

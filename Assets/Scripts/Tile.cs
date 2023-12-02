@@ -57,7 +57,6 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
@@ -65,6 +64,15 @@ public class Tile : MonoBehaviour
         {
             // TODO show tower range, tower tooltip...
             return;
+        }
+
+
+        // set gather point on this path tile
+        if (!IsEmpty)
+        {
+            Ally.GatherTile = this;
+            Debug.Log("changed gather tile");
+            // TODO change sprite
         }
         
 
@@ -86,8 +94,6 @@ public class Tile : MonoBehaviour
             UIManager.Instance.ShowTowersPanel();
             ColorTile(hoveredColor);
         }
-
-        
     }
 
     // color only empty tiles
