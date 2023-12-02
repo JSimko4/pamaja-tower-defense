@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
+    public Sprite GatherTileSprite;
+    public Sprite DefaultSprite;
     public static Tile ClickedTile;
 
     public Vector2Int mapCoordinates; // row, column indexes (coordinates) in LevelManager dictionary
@@ -70,9 +72,17 @@ public class Tile : MonoBehaviour
         // set gather point on this path tile
         if (!IsEmpty)
         {
+            // Set default sprite for the old gather point tile
+            if (Ally.GatherTile)
+            {
+                Ally.GatherTile.spriteRenderer.sprite = DefaultSprite;
+            }
+
+            // Change gather point for allies
             Ally.GatherTile = this;
-            Debug.Log("changed gather tile");
-            // TODO change sprite
+
+            // Change sprite to display gather point
+            spriteRenderer.sprite = GatherTileSprite;
         }
         
 
