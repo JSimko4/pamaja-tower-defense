@@ -78,7 +78,7 @@ public class LevelManager : Singleton<LevelManager>
         starts = new List<Tile>();
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
         starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 11)));
-        end = Tiles.GetValueOrDefault(new Vector2Int(6, 6));
+        end = Tiles.GetValueOrDefault(new Vector2Int(7, 6));
         Ally.GatherTile = end;
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
     public Sprite GatherTileSprite;
     public Sprite DefaultSprite;
+
     public static Tile ClickedTile;
 
     public Vector2Int mapCoordinates; // row, column indexes (coordinates) in LevelManager dictionary
@@ -16,7 +18,6 @@ public class Tile : MonoBehaviour
     public static int EmptyTileType { get => 0; }
 
     
-    private SpriteRenderer spriteRenderer;
     public Tower Tower { get; private set; }
 
     public bool IsEmpty { get => TileType == EmptyTileType; }
@@ -48,6 +49,11 @@ public class Tile : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (this == Ally.GatherTile)
+        {
+            // Change sprite to display gather point
+            spriteRenderer.sprite = GatherTileSprite;
+        }
     }
 
     // Update is called once per frame
