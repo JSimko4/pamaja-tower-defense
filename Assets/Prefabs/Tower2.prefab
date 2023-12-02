@@ -180,8 +180,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7666303024235538125}
   - component: {fileID: 5694200819966383700}
-  - component: {fileID: 5374316494568543857}
   - component: {fileID: 399811335901443518}
+  - component: {fileID: 709333963011700750}
   m_Layer: 0
   m_Name: TowerRange
   m_TagString: Untagged
@@ -256,24 +256,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5374316494568543857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4833215956685315202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7e1319dfb1f9841a907cb4849bfca9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 6
-  damage: 2
-  attackCooldown: 1
-  price: 0
-  projectileSpeed: 4
-  projectilePrefab: {fileID: 2666235717455547974, guid: 9f9935c2388bb2144a9f8b936a71fbd4, type: 3}
 --- !u!58 &399811335901443518
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -309,3 +291,22 @@ CircleCollider2D:
   m_Offset: {x: -0.00000023841858, y: 0.000000007450581}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &709333963011700750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833215956685315202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136293222f79bf9408c5e100f9921ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 6
+  damage: 10
+  attackCooldown: 4
+  price: 0
+  projectileSpeed: 0
+  projectilePrefab: {fileID: 704084108369222147, guid: 10219b6169336444b8998e63269296c7, type: 3}
+  slowAmountPercentage: 40
