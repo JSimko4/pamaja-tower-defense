@@ -6,6 +6,10 @@ using UnityEngine;
 public class Monster : Unit
 {
     private float stunnedDuration;
+    public Ally fightingAlly = null;
+
+    private bool canAttack = false;
+    private float attackTimer;
 
     private bool isStunned { get => stunnedDuration > 0; }
     // Start is called before the first frame update
@@ -26,7 +30,15 @@ public class Monster : Unit
             stunnedDuration -= Time.deltaTime;
             return;
         }
-        Move();
+
+        if (fightingAlly != null && fightingAlly.IsAtGatherTile)
+        {
+            Attack();
+        }
+        else
+        {
+            Move();
+        }
     }
 
     public void TakeDamage(int damage)
@@ -49,6 +61,28 @@ public class Monster : Unit
         {
             isAlive = false;
             Destroy(gameObject);
+        }
+    }
+
+
+    private void Attack()
+    {
+        // attack speed mechanic
+        if (!canAttack)
+        {
+            attackTimer += Time.deltaTime;
+
+            if (attackTimer >= AttackCooldown)
+            {
+                canAttack = true;
+                attackTimer = 0;
+            }
+        }
+
+        if (canAttack && fightingAlly != null && fightingAlly.IsAlive)
+        {
+            fightingAlly.TakeDamage(damage);
+            canAttack = false;
         }
     }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Ally : Unit
@@ -5,32 +6,73 @@ public class Ally : Unit
     [SerializeField]
     private int price;
 
+    [SerializeField]
+    private int maxFightCapacity;
+
+    public List<Monster> fightingMonsters = new List<Monster>();
+
+    public Tile lastTile;
+
     public static Tile GatherTile;
-    private Tile previousGatherTile;
-    private Tile lastTile;
+    public Tile previousGatherTile;
+
+    private bool canAttack = false;
+    private float attackTimer;
 
     public int Price { get => price; }
+
+    public bool IsAtGatherTile { get => lastTile == GatherTile; }
+    public Monster Target { get => fightingMonsters.Count > 0 ? fightingMonsters[0] : null; }
+    public bool CanFightMoreMonsters { get => fightingMonsters.Count < maxFightCapacity; }
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
-        nextTile = startTile;
+        nextTile = path.GetNextTile();
         lastTile = startTile;
-        previousGatherTile = LevelManager.Instance.End;
+        previousGatherTile = GatherTile;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        if (IsAtGatherTile && Target != null)
+        {
+            Attack();
+        }
+        else
+        {
+            Move();
+        }
+    }
+
+    private void Attack()
+    {
+        // attack speed mechanic
+        if (!canAttack)
+        {
+            attackTimer += Time.deltaTime;
+
+            if (attackTimer >= AttackCooldown)
+            {
+                canAttack = true;
+                attackTimer = 0;
+            }
+        }
+
+        if (canAttack && Target != null && Target.IsAlive)
+        {
+            Target.TakeDamage(damage);
+            canAttack = false;
+        }
     }
 
 
-    public void TakeDamage(Monster monster)
+    public void TakeDamage(int damage)
     {
-        health -= monster.Damage;
+        health -= damage;
 
         if (health <= 0)
         {
@@ -42,15 +84,7 @@ public class Ally : Unit
     private void getPathToGatherPoint()
     {
         path = PathFinding.Instance.GetPath(lastTile, GatherTile);
-        GatherTile.PresentAllies.Remove(this);
-        Debug.Log("removing ally from gather tile");
         previousGatherTile = GatherTile;
-    }
-
-    public void addAllyToGatherTile()
-    {
-        Debug.Log("reached gather");
-        GatherTile.PresentAllies.Add(this);
     }
 
     private void Move()
@@ -63,9 +97,6 @@ public class Ally : Unit
             {
                 lastTile = nextTile;
 
-                // Reached gather tile
-                if (GatherTile == lastTile) addAllyToGatherTile();
-
                 // Get new path if gather tile changed
                 if (GatherTile != previousGatherTile) getPathToGatherPoint();
 
@@ -77,6 +108,28 @@ public class Ally : Unit
         {
             getPathToGatherPoint();
             nextTile = path.GetNextTile();
+        }
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Monster" && IsAtGatherTile && CanFightMoreMonsters)
+        {
+            Debug.Log("Fighting monster");
+            Monster monster = other.GetComponent<Monster>();
+            monster.fightingAlly = this;
+            fightingMonsters.Add(monster);
+        }
+    }
+
+    protected virtual void OnTriggerExit2D(Collider2D other)
+    {    
+        if (other.tag == "Monster")
+        {
+            Debug.Log("Removing monster");
+            Monster monster = other.GetComponent<Monster>();
+            monster.fightingAlly = null;
+            fightingMonsters.Remove(monster);
         }
     }
 
