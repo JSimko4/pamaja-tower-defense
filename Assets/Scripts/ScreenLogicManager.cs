@@ -15,6 +15,14 @@ public class SceneChangeManager : MonoBehaviour
     {
         SceneManager.LoadScene("EntryScreen");
     }
+    public void LoadTownScene()
+    {
+        SceneManager.LoadScene("TownScreen");
+    }
+    public void LoadlevelsScene()
+    {
+        SceneManager.LoadScene("LevelsScreen");
+    }
     void Start()
     {
         
@@ -26,3 +34,4 @@ public class SceneChangeManager : MonoBehaviour
         
     }
 }
+    
