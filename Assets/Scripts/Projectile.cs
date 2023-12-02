@@ -32,6 +32,15 @@ public class Projectile : MonoBehaviour
         transform.position = parent.transform.position;
     }
 
+    public virtual void Init(Monster monster, Tower parent)
+    {
+        parentTower = parent;
+        speed = parent.ProjectileSpeed;
+        target = monster;
+
+        transform.position = parent.transform.position;
+    }
+
     protected virtual void MoveToTarget()
     {
         if (target != null && target.IsAlive)

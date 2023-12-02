@@ -30,11 +30,11 @@ public class Tower : MonoBehaviour
 
     public float AttackCooldown { get => attackCooldown; }
 
-    private bool canAttack = false;
-    private float attackTimer;
+    protected bool canAttack = false;
+    protected float attackTimer;
 
 
-    private List<Monster> MonstersInRange;
+    protected List<Monster> MonstersInRange;
 
     public Monster Target { get => MonstersInRange.Count > 0 ? MonstersInRange[0] : null; }
 
@@ -68,7 +68,7 @@ public class Tower : MonoBehaviour
         if(isPlaced)
             Attack();
     }
-    private void Attack()
+    protected virtual void Attack()
     {
         // attack speed mechanic
         if (!canAttack)
@@ -93,6 +93,12 @@ public class Tower : MonoBehaviour
     {
         var projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
         projectile.Init(this);
+    }
+
+    protected void SpawnProjectile(Monster monster)
+    {
+        var projectile = Instantiate(projectilePrefab).GetComponent<Projectile>();
+        projectile.Init(monster, this);
     }
 
 
