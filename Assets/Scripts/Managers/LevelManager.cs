@@ -1,6 +1,9 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -45,9 +48,12 @@ public class LevelManager : Singleton<LevelManager>
 
     void LoadMap()
     {
-        TextAsset mapText = Resources.Load<TextAsset>(mapFileName);
-        string[] mapLines = mapText.text.Split('\n', System.StringSplitOptions.RemoveEmptyEntries);
+        // Load level dsata from JSON
+        string jsonFilePath = "Assets/Resources/level1.json";
+        string jsonText = System.IO.File.ReadAllText(jsonFilePath);
+        LevelData levelData = JsonUtility.FromJson<LevelData>(jsonText);
 
+        string[] mapLines = levelData.grid.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < mapLines.Length; i++)
         {
             for (int j = 0; j < mapLines[i].Length; j++)
@@ -69,16 +75,19 @@ public class LevelManager : Singleton<LevelManager>
                     tile.TileType = 0;
                     Tiles.Add(new Vector2Int(i, j), tile);
                 }
-
-                
             }
         }
 
-        //TODO programatically set
+        // Assign start tiles
         starts = new List<Tile>();
-        starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
-        starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 11)));
-        end = Tiles.GetValueOrDefault(new Vector2Int(7, 6));
+        for (int i = 0; i < levelData.startTilePositions.Count;)
+        {
+            starts.Add(Tiles.GetValueOrDefault(new Vector2Int(levelData.startTilePositions[i++], levelData.startTilePositions[i++])));
+        }
+
+
+        // Assign end tile (base location)
+        end = Tiles.GetValueOrDefault(new Vector2Int(levelData.endTilePosition[0], levelData.endTilePosition[1]));
         Ally.GatherTile = end;
     }
 }
