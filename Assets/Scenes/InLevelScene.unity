@@ -167,107 +167,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &36844473
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -4931128333052389673, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_Animations.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4931128333052389673, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_Animations.Array.data[1]
-      value: 
-      objectReference: {fileID: 7400000, guid: 32316fe659cb05842b687effdf714014, type: 2}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1187.3457
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 234.0346
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 52111600628732024, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8927360756733544334, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      propertyPath: m_Name
-      value: Monster2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -4931128333052389673, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-    - {fileID: 2713881093538523648, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8927360756733544334, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 350598570}
-  m_SourcePrefab: {fileID: 100100000, guid: 781c142b631958949a9050146e61ea4f, type: 3}
 --- !u!224 &198131170 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5707607155739456116, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
   m_PrefabInstance: {fileID: 1423699705}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &350598561 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8927360756733544334, guid: 781c142b631958949a9050146e61ea4f, type: 3}
-  m_PrefabInstance: {fileID: 36844473}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &350598570
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350598561}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce06c2ddf9e4b6541b49e8c8bed4d041, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &360260625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1234,7 @@ PrefabInstance:
     - target: {fileID: 1848830713795138744, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: towerPrefab
       value: 
-      objectReference: {fileID: 3173652902975774914, guid: 10cb42676363dd54fa4479029663c080, type: 3}
+      objectReference: {fileID: 2669264532520963789, guid: 321092c4c3ce92e4ca4a33befd16d228, type: 3}
     - target: {fileID: 2147955280920633013, guid: fffbd7c16864f1846ae478f2be3af5cc, type: 3}
       propertyPath: m_text
       value: Archer Tower
@@ -1669,6 +1573,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 360260626}
     m_Modifications:
+    - target: {fileID: 4090925559805021057, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
+      propertyPath: allyPrefab
+      value: 
+      objectReference: {fileID: 1653595176801536041, guid: e6c09ef8f2bd270408f2f40f18b2da4e, type: 3}
     - target: {fileID: 5707607155739456116, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1751,7 +1659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735406687661738362, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
       propertyPath: m_text
-      value: Knight
+      value: Human Knight
       objectReference: {fileID: 0}
     - target: {fileID: 7078895407634611156, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
       propertyPath: m_Name
@@ -2207,7 +2115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5735406687661738362, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
       propertyPath: m_text
-      value: Dwarf Warrior
+      value: Elf Warrior
       objectReference: {fileID: 0}
     - target: {fileID: 7078895407634611156, guid: 1e85eb2f1ac6af44d807bd24280e9a55, type: 3}
       propertyPath: m_Name
@@ -2697,4 +2605,3 @@ SceneRoots:
   - {fileID: 1440346016}
   - {fileID: 20102306}
   - {fileID: 1663965860}
-  - {fileID: 36844473}

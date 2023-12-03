@@ -18,6 +18,7 @@ public class Ally : Unit
 
     private bool canAttack = false;
     private float attackTimer;
+    private SpriteRenderer spriteRenderer;
 
     public int Price { get => price; }
 
@@ -29,6 +30,7 @@ public class Ally : Unit
     protected override void Start()
     {
         base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
         nextTile = path.GetNextTile();
         lastTile = startTile;
@@ -91,7 +93,17 @@ public class Ally : Unit
     {
         if (nextTile != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, nextTile.transform.position, Speed * Time.deltaTime);
+            Vector2 currentPosition = transform.position;
+            Vector2 targetPosition = nextTile.transform.position;
+
+            // Flip sprite based on direction
+            if (targetPosition.x > currentPosition.x)
+                spriteRenderer.flipX = false; // moving right
+            else if (targetPosition.x < currentPosition.x)
+                spriteRenderer.flipX = true; // moving left
+
+            // Existing movement code
+            transform.position = Vector2.MoveTowards(currentPosition, targetPosition, Speed * Time.deltaTime);
             // Get next tile after we already moved to the tile we were heading to
             if (transform.position == nextTile.transform.position)
             {
