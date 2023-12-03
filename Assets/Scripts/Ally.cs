@@ -144,7 +144,6 @@ public class Ally : Unit
     {
         if (other.tag == "Monster" && IsAtGatherTile && CanFightMoreMonsters)
         {
-            Debug.Log("Fighting monster");
             Monster monster = other.GetComponent<Monster>();
             monster.fightingAlly = this;
             fightingMonsters.Add(monster);
@@ -155,7 +154,6 @@ public class Ally : Unit
     {    
         if (other.tag == "Monster")
         {
-            Debug.Log("Removing monster");
             Monster monster = other.GetComponent<Monster>();
             monster.fightingAlly = null;
             fightingMonsters.Remove(monster);

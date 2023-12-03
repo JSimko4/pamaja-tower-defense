@@ -1,4 +1,4 @@
-using System.Collections;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,8 +18,8 @@ public class LevelManager : Singleton<LevelManager>
     private Vector3 worldStart;
     private Vector3 first;
 
-    private string mapFileName = "Level1";
-    private float tileSize ;
+    private string mapFileName = "level1";
+    private float tileSize;
 
     private List<Tile> starts;
     private Tile end;
@@ -45,9 +45,18 @@ public class LevelManager : Singleton<LevelManager>
 
     void LoadMap()
     {
-        TextAsset mapText = Resources.Load<TextAsset>(mapFileName);
-        string[] mapLines = mapText.text.Split('\n', System.StringSplitOptions.RemoveEmptyEntries);
+        // Load level data from JSON
+        string jsonFilePath = $"Assets/Resources/{mapFileName}.json";
+        string jsonText = System.IO.File.ReadAllText(jsonFilePath);
+        LevelData levelData = JsonConvert.DeserializeObject<LevelData>(jsonText);
 
+        // Load waves to GameManager
+        GameManager.Instance.waves = levelData.Waves;
+        
+        // Update Waves UI
+        UIManager.Instance.SetWave(0, levelData.Waves.Count);
+
+        string[] mapLines = levelData.grid.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < mapLines.Length; i++)
         {
             for (int j = 0; j < mapLines[i].Length; j++)
@@ -56,7 +65,6 @@ public class LevelManager : Singleton<LevelManager>
                 Vector2 spawnPosition = new Vector2(first.x + j * tileSize, first.y -i * tileSize); // Negative on 'i' to start from top
 
                 Tile tile;
-
                 if (tileChar == '1')
                 {
                     tile = Instantiate(tile1, spawnPosition, Quaternion.identity).GetComponent<Tile>();
@@ -67,18 +75,22 @@ public class LevelManager : Singleton<LevelManager>
                 else if(tileChar == '0') {
                     tile = Instantiate(tile2, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 0;
+                    tile.mapCoordinates = new Vector2Int(i, j);
                     Tiles.Add(new Vector2Int(i, j), tile);
                 }
-
-                
             }
         }
 
-        //TODO programatically set
+        // Assign start tiles
         starts = new List<Tile>();
-        starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 1)));
-        starts.Add(Tiles.GetValueOrDefault(new Vector2Int(0, 11)));
-        end = Tiles.GetValueOrDefault(new Vector2Int(7, 6));
+        for (int i = 0; i < levelData.StartTilePositions.Count; i++)
+        {
+            starts.Add(Tiles.GetValueOrDefault(new Vector2Int(levelData.StartTilePositions[i][0], levelData.StartTilePositions[i][1])));
+        }
+
+
+        // Assign end tile (base location)
+        end = Tiles.GetValueOrDefault(new Vector2Int(levelData.EndTilePosition[0], levelData.EndTilePosition[1]));
         Ally.GatherTile = end;
     }
 }

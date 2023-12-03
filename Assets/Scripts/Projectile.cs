@@ -61,7 +61,6 @@ public class Projectile : MonoBehaviour
 
     protected virtual void HitTarget()
     {
-        Debug.Log("Hit monster");
         target.TakeDamage(parentTower);
     }
 

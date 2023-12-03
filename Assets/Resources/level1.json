@@ -1,0 +1,49 @@
+{
+    "grid": "010000000001000000,010000011111111000,010000010000001000,010111110001111000,011100000001000000,000000111111000000,000000100000000000,000000100000000000,000000100000000000,000000100000000000",
+    "startTilePositions": [
+        [
+            0,
+            1
+        ],
+        [
+            0,
+            11
+        ]
+    ],
+    "endTilePosition": [
+        7,
+        6
+    ],
+    "waves": [
+        {
+            "manaReward": 50,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 5
+                }
+            ]
+        },
+        {
+            "manaReward": 100,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0
+                }
+            ]
+        }
+    ]
+}
