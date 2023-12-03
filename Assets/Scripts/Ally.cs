@@ -45,6 +45,8 @@ public class Ally : Unit
     void Update()
     {
         // Add more monsters to fight if can fight aditional monsters
+        // This is useful in cases when one of the enemies the ally was fighting with died
+        // In this case we look for enemies in the box collider and start fighting them
         if (IsAtGatherTile && CanFightMoreMonsters && FightingMonsters.Count < MonstersInRange.Count)
         {
             foreach (Monster monster in MonstersInRange.GetRange(0, Mathf.Min(MonstersInRange.Count, maxFightCapacity)))
@@ -52,7 +54,6 @@ public class Ally : Unit
                 // Check if the monster is not already in the FightingMonsters list
                 if (!FightingMonsters.Contains(monster))
                 {
-                    Debug.Log("adding ADDITIONAL monster to fight");
                     FightingMonsters.Add(monster);
                     monster.fightingAlly = this;
                 }
@@ -159,7 +160,6 @@ public class Ally : Unit
 
             if (CanFightMoreMonsters)
             {
-                Debug.Log("adding monster to fight");
                 FightingMonsters.Add(monster);
                 monster.fightingAlly = this;
             }
