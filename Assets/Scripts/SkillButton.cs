@@ -10,7 +10,7 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler
 
     public static GameObject ClickedSkillPrefab { get; set; }
 
-    public static void selectSpell(GameObject prefab)
+    public static void SelectSpell(GameObject prefab)
     {
         Skill skill = prefab.GetComponent<Skill>();
         var skillPrefabInstance = Instantiate(skill.PrecastPrefab);
@@ -20,7 +20,7 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler
         Hover.Instance.SetHoverPrefabInstance(skillPrefabInstance);
     }
 
-    public static void resetHoverPrefab()
+    public static void ResetHoverPrefab()
     {
         Hover.Instance.SetHoverPrefabInstance(null);
         ClickedSkillPrefab = null;
@@ -36,11 +36,11 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler
             var skill = Instantiate(ClickedSkillPrefab, Hover.Instance.HoverPrefabInstance.transform.position, Quaternion.identity).GetComponent<Skill>();
         }
 
-        resetHoverPrefab();
+        ResetHoverPrefab();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        selectSpell(skillPrefab);
+        SelectSpell(skillPrefab);
     }
 }

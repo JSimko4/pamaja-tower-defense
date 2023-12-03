@@ -179,6 +179,7 @@ MonoBehaviour:
   destinationTile: {fileID: 0}
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
+  goldReward: 10
   fightingAlly: {fileID: 0}
 --- !u!95 &1724158924309975868
 Animator:

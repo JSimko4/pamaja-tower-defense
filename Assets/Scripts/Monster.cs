@@ -6,12 +6,16 @@ using UnityEngine;
 
 public class Monster : Unit
 {
+    [SerializeField]
+    private int goldReward;
+
     private float stunnedDuration;
     public Ally fightingAlly = null;
 
     private bool canAttack = false;
     private float attackTimer;
     private SpriteRenderer spriteRenderer;
+
     private bool isStunned { get => stunnedDuration > 0; }
     // Start is called before the first frame update
     protected override void Start()
@@ -50,7 +54,7 @@ public class Monster : Unit
         if (health <= 0)
         {
             isAlive = false;
-            Destroy(gameObject);
+            Die(true);
         }
     }
 
@@ -61,9 +65,17 @@ public class Monster : Unit
 
         if(health <= 0)
         {
-            isAlive = false;
-            Destroy(gameObject);
+            Die(true);
         }
+    }
+
+    public void Die(bool giveGoldReward)
+    {
+        if (giveGoldReward) GameManager.Instance.Gold += goldReward;
+
+        isAlive = false;
+        GameManager.Instance.activeMonsters.Remove(this);
+        Destroy(gameObject);
     }
 
 
@@ -114,7 +126,7 @@ public class Monster : Unit
             {
                 int lives = 1;
                 GameManager.Instance.DecreaseLives(lives);
-                Destroy(gameObject);
+                Die(false);
             }
         }
     }
