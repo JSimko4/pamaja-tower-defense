@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9013562879461428069}
   - component: {fileID: 7066688073458679128}
   - component: {fileID: -2297286698277871266}
-  - component: {fileID: 4592066966808461357}
+  - component: {fileID: 7843923351488246601}
   m_Layer: 0
-  m_Name: Ally
+  m_Name: Ally 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6f3127a7c52110c4eb7a8848bc796a58, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Color: {r: 0.06877886, g: 0.097261555, b: 0.8679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20, y: 10.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   fightingMonsters: []
   lastTile: {fileID: 0}
   previousGatherTile: {fileID: 0}
---- !u!95 &4592066966808461357
+--- !u!95 &7843923351488246601
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 1653595176801536041}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 34afd6c74143e7940a3bcc1a7e53fe91, type: 2}
+  m_Controller: {fileID: 9100000, guid: dad48a695ca43e941b5370f07891b8ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
