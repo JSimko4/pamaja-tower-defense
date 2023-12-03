@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 9, y: 9}
   m_EdgeRadius: 0
 --- !u!114 &-2297286698277871266
 MonoBehaviour:
@@ -145,15 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  health: 100
-  damage: 50
+  health: 10000
+  damage: 200
   attackCooldown: 1
   destinationTile: {fileID: 0}
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
   price: 0
   maxFightCapacity: 2
-  fightingMonsters: []
+  MonstersInRange: []
+  FightingMonsters: []
   lastTile: {fileID: 0}
   previousGatherTile: {fileID: 0}
 --- !u!95 &7843923351488246601

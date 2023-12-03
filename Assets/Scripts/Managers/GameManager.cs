@@ -96,7 +96,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private IEnumerator Spawn(int monsterIndex, int startTileIndex, int delayBeforeSpawnInSec)
+    private IEnumerator Spawn(int monsterIndex, int startTileIndex, float delayBeforeSpawnInSec)
     {
         if (delayBeforeSpawnInSec > 0)
         {

@@ -9,7 +9,8 @@ public class Ally : Unit
     [SerializeField]
     private int maxFightCapacity;
 
-    public List<Monster> fightingMonsters = new List<Monster>();
+    public List<Monster> MonstersInRange = new List<Monster>();
+    public List<Monster> FightingMonsters = new List<Monster>();
 
     public Tile lastTile;
 
@@ -24,8 +25,9 @@ public class Ally : Unit
     public int Price { get => price; }
 
     public bool IsAtGatherTile { get => lastTile == GatherTile; }
-    public Monster Target { get => fightingMonsters.Count > 0 ? fightingMonsters[0] : null; }
-    public bool CanFightMoreMonsters { get => fightingMonsters.Count < maxFightCapacity; }
+    public Monster Target { get => FightingMonsters.Count > 0 ? FightingMonsters[0] : null; }
+
+    public bool CanFightMoreMonsters { get => FightingMonsters.Count < maxFightCapacity; }
 
     // Start is called before the first frame update
     protected override void Start()
@@ -42,7 +44,20 @@ public class Ally : Unit
     // Update is called once per frame
     void Update()
     {
-       
+        // Add more monsters to fight if can fight aditional monsters
+        if (IsAtGatherTile && CanFightMoreMonsters && FightingMonsters.Count < MonstersInRange.Count)
+        {
+            foreach (Monster monster in MonstersInRange.GetRange(0, Mathf.Min(MonstersInRange.Count, maxFightCapacity)))
+            {
+                // Check if the monster is not already in the FightingMonsters list
+                if (!FightingMonsters.Contains(monster))
+                {
+                    Debug.Log("adding ADDITIONAL monster to fight");
+                    FightingMonsters.Add(monster);
+                    monster.fightingAlly = this;
+                }
+            }
+        }
 
         if (IsAtGatherTile && Target != null)
         {
@@ -136,17 +151,20 @@ public class Ally : Unit
         }
     }
 
-
-    // TODO this needs to be reworked
-    // in a way that we can check on every update frame
-    // if there are any enemies colliding with the Ally
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Monster" && IsAtGatherTile && CanFightMoreMonsters)
+        if (other.tag == "Monster" && IsAtGatherTile)
         {
             Monster monster = other.GetComponent<Monster>();
-            monster.fightingAlly = this;
-            fightingMonsters.Add(monster);
+
+            if (CanFightMoreMonsters)
+            {
+                Debug.Log("adding monster to fight");
+                FightingMonsters.Add(monster);
+                monster.fightingAlly = this;
+            }
+
+            MonstersInRange.Add(monster);
         }
     }
 
@@ -156,7 +174,9 @@ public class Ally : Unit
         {
             Monster monster = other.GetComponent<Monster>();
             monster.fightingAlly = null;
-            fightingMonsters.Remove(monster);
+
+            MonstersInRange.Remove(monster);
+            FightingMonsters.Remove(monster);
         }
     }
 

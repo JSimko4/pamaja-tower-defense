@@ -10,5 +10,5 @@ public class Spawn
     public int startTilePositionIndex;
 
     [JsonProperty("delayBeforeSpawnInSec")]
-    public int delayBeforeSpawnInSec;
+    public float delayBeforeSpawnInSec;
 }
