@@ -1,7 +1,12 @@
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 [System.Serializable]
 public class Wave
 {
-    public int x;
+    [JsonProperty("manaReward")]
+    public int manaReward;
+
+    [JsonProperty("spawns")]
+    public List<Spawn> Spawns;
 }

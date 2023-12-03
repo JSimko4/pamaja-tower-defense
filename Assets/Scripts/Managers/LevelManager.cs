@@ -19,7 +19,7 @@ public class LevelManager : Singleton<LevelManager>
     private Vector3 first;
 
     private string mapFileName = "level1";
-    private float tileSize ;
+    private float tileSize;
 
     private List<Tile> starts;
     private Tile end;
@@ -45,10 +45,16 @@ public class LevelManager : Singleton<LevelManager>
 
     void LoadMap()
     {
-        // Load level dsata from JSON
+        // Load level data from JSON
         string jsonFilePath = $"Assets/Resources/{mapFileName}.json";
         string jsonText = System.IO.File.ReadAllText(jsonFilePath);
         LevelData levelData = JsonConvert.DeserializeObject<LevelData>(jsonText);
+
+        // Load waves to GameManager
+        GameManager.Instance.waves = levelData.Waves;
+        
+        // Update Waves UI
+        UIManager.Instance.SetWave(0, levelData.Waves.Count);
 
         string[] mapLines = levelData.grid.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < mapLines.Length; i++)
