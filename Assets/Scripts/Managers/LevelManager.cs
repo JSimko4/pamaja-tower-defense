@@ -56,8 +56,8 @@ public class LevelManager : Singleton<LevelManager>
         // Update Waves UI
         UIManager.Instance.SetWave(0, levelData.Waves.Count);
 
-        string[] mapLines = levelData.grid.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
-        for (int i = 0; i < mapLines.Length; i++)
+        List<string> mapLines = levelData.grid;
+        for (int i = 0; i < mapLines.Count; i++)
         {
             for (int j = 0; j < mapLines[i].Length; j++)
             {

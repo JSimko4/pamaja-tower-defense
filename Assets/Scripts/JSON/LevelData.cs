@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class LevelData
 {
-    public string grid;
+    public List<string> grid;
 
     [JsonProperty("startTilePositions")]
     public List<List<int>> StartTilePositions;
