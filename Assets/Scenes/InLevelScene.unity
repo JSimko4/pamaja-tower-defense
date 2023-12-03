@@ -1049,12 +1049,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
-  lives: 0
+  lives: 5
   mana: 0
   monsterPrefabs:
   - {fileID: 8927360756733544334, guid: 8341bcde643071640ad606069701d0f2, type: 3}
   - {fileID: 8927360756733544334, guid: 781c142b631958949a9050146e61ea4f, type: 3}
   allyPrefabs: []
+  activeMonsters: []
 --- !u!4 &1016887563
 Transform:
   m_ObjectHideFlags: 0

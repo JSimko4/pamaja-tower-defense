@@ -20,15 +20,15 @@ public class ShortcutManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SkillButton.selectSpell(meteorPrefab);
+            SkillButton.SelectSpell(meteorPrefab);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SkillButton.selectSpell(freezePrefab);
+            SkillButton.SelectSpell(freezePrefab);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SkillButton.selectSpell(healPrefab);
+            SkillButton.SelectSpell(healPrefab);
         }
         else if(Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -41,7 +41,7 @@ public class ShortcutManager : MonoBehaviour
         // Reset skill hover when right clicked 
         else if (Input.GetMouseButtonDown(1))
         {
-            SkillButton.resetHoverPrefab();
+            SkillButton.ResetHoverPrefab();
         }
     }
 }
