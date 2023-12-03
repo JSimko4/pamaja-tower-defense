@@ -19,6 +19,7 @@ public class Ally : Unit
     private bool canAttack = false;
     private float attackTimer;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     public int Price { get => price; }
 
@@ -30,6 +31,7 @@ public class Ally : Unit
     protected override void Start()
     {
         base.Start();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
         nextTile = path.GetNextTile();
@@ -40,8 +42,11 @@ public class Ally : Unit
     // Update is called once per frame
     void Update()
     {
+       
+
         if (IsAtGatherTile && Target != null)
         {
+            animator.SetBool("IsMoving", false);
             Attack();
         }
         else
@@ -102,6 +107,9 @@ public class Ally : Unit
             else if (targetPosition.x < currentPosition.x)
                 spriteRenderer.flipX = true; // moving left
 
+            bool isMoving = (currentPosition != targetPosition);
+            animator.SetBool("IsMoving", isMoving);
+
             // Existing movement code
             transform.position = Vector2.MoveTowards(currentPosition, targetPosition, Speed * Time.deltaTime);
             // Get next tile after we already moved to the tile we were heading to
@@ -120,6 +128,9 @@ public class Ally : Unit
         {
             getPathToGatherPoint();
             nextTile = path.GetNextTile();
+        }
+        else { 
+            animator.SetBool("IsMoving", false); 
         }
     }
 
