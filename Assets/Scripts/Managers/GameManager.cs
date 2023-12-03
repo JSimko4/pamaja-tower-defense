@@ -16,14 +16,23 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private List<GameObject> allyPrefabs;
 
-    public int Gold { get { return gold; } }
-    public int Lives { get { return lives; } }
-    public int Mana { get { return mana; } set { mana = value; } }
+    public List<Monster> activeMonsters = new List<Monster>();
 
+    public int Gold { get { return gold; } set { gold = value; } }
+    public int Lives { get { return lives; } set { lives = value; } }
+    public int Mana { get { return mana; } set { mana = value; } }
+    public bool GameLost { get => Lives <= 0; }
 
 
     private int currentWave = 0;
-    private int totalWaves = 9;
+    private int totalWaves = 2;
+
+    private int wavePaths;
+    private int wavePathsFinished;
+    private bool waveStarted;
+    private int waveManaReward;
+    private bool Spawning { get => wavePaths != wavePathsFinished; }
+    public bool WaveActive { get => activeMonsters.Count > 0 || Spawning; }
 
 
     // Start is called before the first frame update
@@ -35,7 +44,33 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log($"Current gold: {Gold}");
+        //Debug.Log($"Current mana: {Mana}");
+        Debug.Log($"Current lives: {Lives}");
+        Debug.Log($"Spawning: {Spawning}");
+        Debug.Log($"WaveActive: {WaveActive}");
+
+        if (GameLost)
+        {
+            Debug.Log("TODO: Game lost - show restart screen");
+        }
+
+        // Finished wave
+        else if (!WaveActive && waveStarted) 
+        {   
+            if (currentWave == totalWaves)   // If it was last wave
+            {
+                Debug.Log("TODO: All waves done - back to main menu or something like that");
+            }
+            else // Give mana reward for finishing wave it isnt the last wave
+            {
+                Debug.Log($"Giving mana reward for finishing wave: {waveManaReward}");
+                Mana += waveManaReward;
+                UIManager.Instance.ShowNextWaveButton();
+            }
+
+            waveStarted = false;
+        }
     }
 
     public void BuyTower(Tower tower)
@@ -60,6 +95,10 @@ public class GameManager : Singleton<GameManager>
         };
 
         // start multiple threads because monsters can come from multiple spawns in one wave
+        waveStarted = true;
+        waveManaReward = 50; // TODO get from the file?
+        wavePaths = spawns.Length;
+        wavePathsFinished = 0;
         for (int i = 0; i < spawns.Length; i++)
         {
             StartCoroutine(SpawnWave(i, spawns[i]));
@@ -78,8 +117,8 @@ public class GameManager : Singleton<GameManager>
         {
             if (i == spawnString.Length || spawnString[i] == ',') // actually spawn and clear value and wait flag
             {
-                //if (i == spawnString.Length) //after reading the whole string spawning is completed
-                //    wave_paths_finished++;
+                if (i == spawnString.Length) //after reading the whole string spawning is completed
+                    wavePathsFinished++;
 
                 if (!wait)
                     yield return SpawnMonster(path_id, int.Parse(value));
@@ -108,6 +147,7 @@ public class GameManager : Singleton<GameManager>
         ).GetComponent<Monster>();
 
         monster.startTile = LevelManager.Instance.getStartTile(path_id);
+        activeMonsters.Add(monster);
 
         yield return new WaitForSeconds(0.2f);
     }
