@@ -65,7 +65,6 @@ public class LevelManager : Singleton<LevelManager>
                 Vector2 spawnPosition = new Vector2(first.x + j * tileSize, first.y -i * tileSize); // Negative on 'i' to start from top
 
                 Tile tile;
-
                 if (tileChar == '1')
                 {
                     tile = Instantiate(tile1, spawnPosition, Quaternion.identity).GetComponent<Tile>();
@@ -76,6 +75,7 @@ public class LevelManager : Singleton<LevelManager>
                 else if(tileChar == '0') {
                     tile = Instantiate(tile2, spawnPosition, Quaternion.identity).GetComponent<Tile>();
                     tile.TileType = 0;
+                    tile.mapCoordinates = new Vector2Int(i, j);
                     Tiles.Add(new Vector2Int(i, j), tile);
                 }
             }
