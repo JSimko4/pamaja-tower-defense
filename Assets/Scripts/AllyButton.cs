@@ -16,10 +16,7 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler
         }
     }
 
-
-    private GameObject prefabInstance;
-
-    private Vector3 SpawnPosition {
+    private static Vector3 SpawnPosition {
         get {
             return new Vector3(LevelManager.Instance.End.transform.position.x, LevelManager.Instance.End.transform.position.y, -1);
         }
@@ -27,7 +24,12 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        prefabInstance = Instantiate(allyPrefab);
+        spawnAlly(allyPrefab);
+    }
+
+    public static void spawnAlly(GameObject prefab)
+    {
+        GameObject prefabInstance = Instantiate(prefab);
         Ally ally = prefabInstance.GetComponentInChildren<Ally>();
 
         // not enough gold
