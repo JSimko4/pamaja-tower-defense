@@ -12,11 +12,13 @@ public class Monster : Unit
     private bool canAttack = false;
     private float attackTimer;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
     private bool isStunned { get => stunnedDuration > 0; }
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         destinationTile = LevelManager.Instance.End;
         path = PathFinding.Instance.GetPath(startTile, destinationTile);
@@ -29,16 +31,19 @@ public class Monster : Unit
         // do not move when stunned
         if (isStunned)
         {
+            animator.SetBool("IsMoving", false);
             stunnedDuration -= Time.deltaTime;
             return;
         }
 
         if (fightingAlly != null && fightingAlly.IsAtGatherTile)
         {
+            animator.SetBool("IsMoving", false);
             Attack();
         }
         else
         {
+            animator.SetBool("IsMoving", true);
             Move();
         }
     }
@@ -98,6 +103,10 @@ public class Monster : Unit
             spriteRenderer.flipX = false; // moving right
         else if (targetPosition.x < currentPosition.x)
             spriteRenderer.flipX = true; // moving left
+
+
+        bool isMoving = (currentPosition != targetPosition);
+        animator.SetBool("IsMoving", isMoving);
 
         // Existing movement code
         transform.position = Vector2.MoveTowards(currentPosition, targetPosition, Speed * Time.deltaTime);
