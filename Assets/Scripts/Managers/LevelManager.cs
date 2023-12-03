@@ -1,9 +1,6 @@
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -21,7 +18,7 @@ public class LevelManager : Singleton<LevelManager>
     private Vector3 worldStart;
     private Vector3 first;
 
-    private string mapFileName = "Level1";
+    private string mapFileName = "level1";
     private float tileSize ;
 
     private List<Tile> starts;
@@ -49,9 +46,9 @@ public class LevelManager : Singleton<LevelManager>
     void LoadMap()
     {
         // Load level dsata from JSON
-        string jsonFilePath = "Assets/Resources/level1.json";
+        string jsonFilePath = $"Assets/Resources/{mapFileName}.json";
         string jsonText = System.IO.File.ReadAllText(jsonFilePath);
-        LevelData levelData = JsonUtility.FromJson<LevelData>(jsonText);
+        LevelData levelData = JsonConvert.DeserializeObject<LevelData>(jsonText);
 
         string[] mapLines = levelData.grid.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
         for (int i = 0; i < mapLines.Length; i++)
@@ -80,14 +77,14 @@ public class LevelManager : Singleton<LevelManager>
 
         // Assign start tiles
         starts = new List<Tile>();
-        for (int i = 0; i < levelData.startTilePositions.Count;)
+        for (int i = 0; i < levelData.StartTilePositions.Count; i++)
         {
-            starts.Add(Tiles.GetValueOrDefault(new Vector2Int(levelData.startTilePositions[i++], levelData.startTilePositions[i++])));
+            starts.Add(Tiles.GetValueOrDefault(new Vector2Int(levelData.StartTilePositions[i][0], levelData.StartTilePositions[i][1])));
         }
 
 
         // Assign end tile (base location)
-        end = Tiles.GetValueOrDefault(new Vector2Int(levelData.endTilePosition[0], levelData.endTilePosition[1]));
+        end = Tiles.GetValueOrDefault(new Vector2Int(levelData.EndTilePosition[0], levelData.EndTilePosition[1]));
         Ally.GatherTile = end;
     }
 }
