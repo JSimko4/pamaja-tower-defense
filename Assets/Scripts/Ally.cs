@@ -47,10 +47,12 @@ public class Ally : Unit
         if (IsAtGatherTile && Target != null)
         {
             animator.SetBool("IsMoving", false);
+            animator.SetBool("IsFighting", true);
             Attack();
         }
         else
         {
+            animator.SetBool("IsFighting", false);
             Move();
         }
     }

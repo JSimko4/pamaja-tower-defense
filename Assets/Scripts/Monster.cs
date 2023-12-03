@@ -16,7 +16,7 @@ public class Monster : Unit
     private float attackTimer;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-
+        
     private bool isStunned { get => stunnedDuration > 0; }
     // Start is called before the first frame update
     protected override void Start()
@@ -36,18 +36,22 @@ public class Monster : Unit
         if (isStunned)
         {
             animator.SetBool("IsMoving", false);
+            animator.SetBool("IsFighting", false);
             stunnedDuration -= Time.deltaTime;
             return;
         }
 
         if (fightingAlly != null && fightingAlly.IsAtGatherTile)
         {
+
             animator.SetBool("IsMoving", false);
+            animator.SetBool("IsFighting", true);
             Attack();
         }
         else
         {
             animator.SetBool("IsMoving", true);
+            animator.SetBool("IsFighting", false);
             Move();
         }
     }
