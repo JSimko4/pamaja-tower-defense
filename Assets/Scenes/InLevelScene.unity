@@ -1058,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 0}
+  m_AnchoredPosition: {x: -771.66, y: 169}
   m_SizeDelta: {x: 179.8308, y: 141.347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647994091
@@ -1726,9 +1726,9 @@ Transform:
   m_LocalScale: {x: 29.349842, y: 21.93433, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 518312901}
   - {fileID: 1809236172}
   - {fileID: 198131170}
-  - {fileID: 518312901}
   m_Father: {fileID: 1823682414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1260653343
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towersPanel: {fileID: 1463005797}
-  alliesPanel: {fileID: 0}
+  alliesPanel: {fileID: 1260653341}
   nextWaveButton: {fileID: 647994089}
   waveText: {fileID: 499061415}
 --- !u!1 &1993971438

@@ -52,6 +52,6 @@ public class UIManager : Singleton<UIManager>
 
     public void SetWave(int currentWave, int totalWaves)
     {
-        waveText.text = "Wave: " + currentWave + " / " + totalWaves;
+        waveText.text = currentWave + " / " + totalWaves;
     }
 }

@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7191008375722843823}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.916464, y: -2.138448, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3.7963}
+  m_LocalPosition: {x: -6.916464, y: -0.02099142, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 3.7963}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.6536134, g: 0.8867205, b: 0.9056604, a: 0.8235294}
+  m_Sprite: {fileID: 21300000, guid: 5f095453be268754689949202d933b44, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCost: 0
-  radius: 2.5
-  precastPrefab: {fileID: 3785730736501615612, guid: e4e20ed6fbc12664abb6728f26665410, type: 3}
+  radius: 2
+  precastPrefab: {fileID: 4898889282152799856, guid: 33b71fe17c32dbc4486b3557a449f111, type: 3}
   damage: 15
   stunDuration: 3
 --- !u!114 &8342503461988798162
@@ -145,7 +145,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
