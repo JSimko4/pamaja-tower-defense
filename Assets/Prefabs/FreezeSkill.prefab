@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7594137717660595917}
   - component: {fileID: 8342503461988798162}
   - component: {fileID: -7290194405482533694}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FreezeSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 998
   m_Sprite: {fileID: 21300000, guid: 5f095453be268754689949202d933b44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
