@@ -66,7 +66,7 @@ public class UIManager : Singleton<UIManager>
 
     public void SetLives(int lives, int totalLives)
     {
-        livesText.text = $"{lives}/{totalLives}"; ;
+        livesText.text = $"{lives}"; ;
     }
 
     public void SetGold(int gold)
