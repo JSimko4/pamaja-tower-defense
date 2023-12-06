@@ -123,7 +123,7 @@ public class Tile : MonoBehaviour
     // color only empty tiles
     private void ColorTile(Color newColor)
     {
-        if (IsEmpty)
+        if (IsEmpty && spriteRenderer != null)
             spriteRenderer.color = newColor;
     }
 
