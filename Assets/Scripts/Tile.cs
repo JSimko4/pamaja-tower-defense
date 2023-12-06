@@ -132,6 +132,11 @@ public class Tile : MonoBehaviour
         if (ClickedTile)
             return;
 
+        if(Tower)
+        {
+            Tower.ToggleRangeVisible(true);
+            return;
+        }
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
@@ -143,6 +148,12 @@ public class Tile : MonoBehaviour
     {
         if (ClickedTile)
             return;
+
+        if (Tower)
+        {
+            Tower.ToggleRangeVisible(false);
+            return;
+        }
 
         ColorTile(defaultColor);
     }

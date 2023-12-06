@@ -10,6 +10,7 @@ public class IceTower : Tower
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Enter");
         base.OnTriggerEnter2D(other);
         if (other.tag == "Monster")
         {

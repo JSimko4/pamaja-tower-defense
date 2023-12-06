@@ -43,10 +43,22 @@ public class Tower : MonoBehaviour
 
     private bool isPlaced = false;
 
+    private SpriteRenderer spriteRenderer;
+    public void ToggleRangeVisible(bool value)
+    {
+        if(!spriteRenderer)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        spriteRenderer.enabled = value;
+    }
+
     public void Place()
     {
         Tile.ClickedTile.PlaceTower(this);
         isPlaced = true;
+        ToggleRangeVisible(false);
     }
 
     public void RangeRescale()
