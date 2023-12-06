@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCost: 0
-  radius: 0.5
+  radius: 2
   precastPrefab: {fileID: 5987870913528950193, guid: 23ded2f3012917d459e490a0df91b510, type: 3}
   healAmount: 30
 --- !u!114 &-2092710493234291339
@@ -149,4 +149,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5

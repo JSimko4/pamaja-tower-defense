@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaCost: 0
   radius: 2
-  precastPrefab: {fileID: 4898889282152799856, guid: 33b71fe17c32dbc4486b3557a449f111, type: 3}
+  precastPrefab: {fileID: 3785730736501615612, guid: e4e20ed6fbc12664abb6728f26665410, type: 3}
   damage: 15
   stunDuration: 3
 --- !u!114 &8342503461988798162
@@ -150,4 +150,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5

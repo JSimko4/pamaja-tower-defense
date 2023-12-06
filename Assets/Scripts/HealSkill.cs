@@ -10,7 +10,7 @@ public class HealSkill : Skill
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Explosion>().Init(transform.position, Radius, 0, 0, healAmount);
+        GetComponent<Explosion>().Init(transform.position, Radius/10, 0, 0, healAmount);
     }
 
     // Update is called once per frame

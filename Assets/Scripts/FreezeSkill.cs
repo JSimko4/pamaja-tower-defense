@@ -13,7 +13,7 @@ public class FreezeSkill : Skill
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Explosion>().Init(transform.position, Radius, damage, stunDuration);
+        GetComponent<Explosion>().Init(transform.position, Radius/10, damage, stunDuration);
     }
 
     // Update is called once per frame
