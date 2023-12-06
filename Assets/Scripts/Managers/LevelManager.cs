@@ -18,7 +18,6 @@ public class LevelManager : Singleton<LevelManager>
     private Vector3 worldStart;
     private Vector3 first;
 
-    private string mapFileName = "level1";
     private float tileSize;
 
     private List<Tile> starts;
@@ -40,13 +39,14 @@ public class LevelManager : Singleton<LevelManager>
         first.y = first.y - tileSize / 2;
         first.z = 0;
         Tiles = new Dictionary<Vector2Int, Tile>();
-        LoadMap();
+
+        LoadMap(PlayerPrefs.GetString("level"));
     }
 
-    void LoadMap()
+    void LoadMap(string level)
     {
         // Load level data from JSON
-        string jsonFilePath = $"Assets/Resources/{mapFileName}.json";
+        string jsonFilePath = $"Assets/Resources/{level}.json";
         string jsonText = System.IO.File.ReadAllText(jsonFilePath);
         LevelData levelData = JsonConvert.DeserializeObject<LevelData>(jsonText);
 
