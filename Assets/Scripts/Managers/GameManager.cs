@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
 
     public List<Monster> activeMonsters = new List<Monster>();
 
+    private int totalLives;
     public int Gold { get { return gold; } set { gold = value; } }
     public int Lives { get { return lives; } set { lives = value; } }
     public int Mana { get { return mana; } set { mana = value; } }
@@ -30,7 +31,7 @@ public class GameManager : Singleton<GameManager>
     private bool waveStarted;
     private int waveManaReward;
 
-    private int TotalWaves { get => waves.Count;}
+    private int TotalWaves { get => waves.Count; }
     private bool Spawning { get => waveSpawns != waveSpawnsFinished; }
     public bool WaveActive { get => activeMonsters.Count > 0 || Spawning; }
 
@@ -38,23 +39,19 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-
+        totalLives = lives;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log($"Current gold: {Gold}");
-        //Debug.Log($"Current mana: {Mana}");
-        Debug.Log($"Current lives: {Lives}");
-
         if (GameLost)
         {
             Debug.Log("TODO: Game lost - show restart screen");
         }
         // Finished wave
-        else if (!WaveActive && waveStarted) 
-        {   
+        else if (!WaveActive && waveStarted)
+        {
             if (currentWave == TotalWaves) // If it was last wave
             {
                 Debug.Log("TODO: All waves done - back to main menu or something like that");
@@ -66,8 +63,16 @@ public class GameManager : Singleton<GameManager>
             }
             waveStarted = false;
         }
+
+        UpdateUiValues();
     }
 
+    public void UpdateUiValues()
+    {   
+        UIManager.Instance.SetLives(Lives, totalLives);
+        UIManager.Instance.SetGold(Gold);
+        UIManager.Instance.SetMana(Mana);
+    }
     public void BuyTower(Tower tower)
     {
         gold -= tower.Price;

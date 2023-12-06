@@ -20,6 +20,15 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private TextMeshProUGUI waveText;
 
+    [SerializeField]
+    private TextMeshProUGUI livesText;
+
+    [SerializeField]
+    private TextMeshProUGUI goldText;
+
+    [SerializeField]
+    private TextMeshProUGUI manaText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +61,21 @@ public class UIManager : Singleton<UIManager>
 
     public void SetWave(int currentWave, int totalWaves)
     {
-        waveText.text = currentWave + " / " + totalWaves;
+        waveText.text = $"{currentWave}/{totalWaves}";
+    }
+
+    public void SetLives(int lives, int totalLives)
+    {
+        livesText.text = $"{lives}/{totalLives}"; ;
+    }
+
+    public void SetGold(int gold)
+    {
+        goldText.text = gold.ToString();
+    }
+
+    public void SetMana(int mana)
+    {
+        manaText.text = mana.ToString();
     }
 }
