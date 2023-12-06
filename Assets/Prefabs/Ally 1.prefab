@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7066688073458679128}
   - component: {fileID: -2297286698277871266}
   - component: {fileID: 7843923351488246601}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ally 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfbabff8b56c2a4197ff55d7efd31ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1.8
   health: 10000
   damage: 200
   attackCooldown: 1

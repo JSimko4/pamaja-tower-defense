@@ -154,11 +154,11 @@ public class Ally : Unit
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Monster" && IsAtGatherTile)
+        if (other.tag == "Monster")
         {
             Monster monster = other.GetComponent<Monster>();
 
-            if (CanFightMoreMonsters)
+            if (CanFightMoreMonsters && IsAtGatherTile)
             {
                 FightingMonsters.Add(monster);
                 monster.fightingAlly = this;

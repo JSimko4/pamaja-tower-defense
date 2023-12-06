@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 563807983477573116}
   - component: {fileID: 4817398619888046420}
   - component: {fileID: 1724158924309975868}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Monster1
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb976d8bf841104cb2e2c06dc0e892a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1.4
   health: 100
   damage: 25
   attackCooldown: 1

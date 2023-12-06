@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 6
   damage: 10
-  attackCooldown: 4
+  attackCooldown: 1
   price: 0
   projectileSpeed: 0
   projectilePrefab: {fileID: 704084108369222147, guid: 10219b6169336444b8998e63269296c7, type: 3}
