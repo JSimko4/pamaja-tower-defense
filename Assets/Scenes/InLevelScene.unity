@@ -1449,9 +1449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab2014cf3f7398418a1caccc945d360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
-  lives: 5
-  mana: 0
+  gold: 500
+  lives: 10
+  mana: 100
   monsterPrefabs:
   - {fileID: 8927360756733544334, guid: 8341bcde643071640ad606069701d0f2, type: 3}
   - {fileID: 8927360756733544334, guid: 781c142b631958949a9050146e61ea4f, type: 3}
