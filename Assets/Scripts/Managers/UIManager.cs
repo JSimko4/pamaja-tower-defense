@@ -18,6 +18,12 @@ public class UIManager : Singleton<UIManager>
     private GameObject nextWaveButton;
 
     [SerializeField]
+    private GameObject winScreen;
+
+    [SerializeField]
+    private GameObject loseScreen;
+
+    [SerializeField]
     private TextMeshProUGUI waveText;
 
     [SerializeField]
@@ -58,6 +64,26 @@ public class UIManager : Singleton<UIManager>
     {
         nextWaveButton.SetActive(false);
     }
+    public void ShowWinScreen()
+    {
+        winScreen.SetActive(true);
+    }
+
+    public void HideWinScreen()
+    {
+        winScreen.SetActive(false);
+    }
+    public void ShowLoseScreen()
+    {
+        loseScreen.SetActive(true);
+    }
+
+    public void HideLoseScreen()
+    {
+        loseScreen.SetActive(false);
+    }
+
+
 
     public void SetWave(int currentWave, int totalWaves)
     {

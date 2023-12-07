@@ -22,6 +22,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private List<Tile> starts;
     private Tile end;
+    public string levelLoaded ;
     public Tile End { get { return end; } }
 
     public Tile getStartTile(int index)
@@ -49,10 +50,9 @@ public class LevelManager : Singleton<LevelManager>
         string jsonFilePath = $"Assets/Resources/{level}.json";
         string jsonText = System.IO.File.ReadAllText(jsonFilePath);
         LevelData levelData = JsonConvert.DeserializeObject<LevelData>(jsonText);
-
+        levelLoaded = level;
         // Load waves to GameManager
         GameManager.Instance.waves = levelData.Waves;
-        
         // Update Waves UI
         UIManager.Instance.SetWave(0, levelData.Waves.Count);
 

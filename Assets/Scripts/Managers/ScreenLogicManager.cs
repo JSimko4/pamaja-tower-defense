@@ -11,6 +11,13 @@ public class SceneChangeManager : MonoBehaviour
         // Load level scene
         SceneManager.LoadScene("InLevelScene");
     }
+    public void ResetLevelScene()
+    {
+        // In the LevelManager we load the level from the value set here
+        PlayerPrefs.SetString("level", LevelManager.Instance.levelLoaded);
+        // Load level scene
+        SceneManager.LoadScene("InLevelScene");
+    }
     public void LoadMenuScene()
     {
         SceneManager.LoadScene("EntryScreen");
