@@ -98,6 +98,7 @@ public class Ally : Unit
     public void TakeDamage(int damage)
     {
         health -= damage;
+        unitCanvas.RedrawHealthBar();
 
         if (health <= 0)
         {
