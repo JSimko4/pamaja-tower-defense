@@ -30,6 +30,8 @@ public abstract class Unit : MonoBehaviour
     public Tile nextTile;
     public Path path;
 
+    protected UnitCanvas unitCanvas;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -37,5 +39,8 @@ public abstract class Unit : MonoBehaviour
         MaxSpeed = speed;
         isAlive = true;
         nextTile = startTile;
+
+        unitCanvas = GetComponentInChildren<UnitCanvas>();
+        unitCanvas.Init(this);
     }
 }

@@ -59,6 +59,7 @@ public class Monster : Unit
     public void TakeDamage(int damage)
     {
         health -= damage;
+        unitCanvas.RedrawHealthBar();
 
         if (health <= 0)
         {
@@ -70,12 +71,7 @@ public class Monster : Unit
 
     public void TakeDamage(Tower tower)
     {
-        health -= tower.Damage;
-
-        if(health <= 0)
-        {
-            Die(true);
-        }
+        TakeDamage(tower.Damage);
     }
 
     public void Die(bool giveGoldReward)
