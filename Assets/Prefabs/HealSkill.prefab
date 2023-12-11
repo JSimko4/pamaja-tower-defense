@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbafc35fdc0b3f24d8d41f3a4eb1c3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaCost: 0
+  manaCost: 25
   radius: 2
   precastPrefab: {fileID: 5987870913528950193, guid: 23ded2f3012917d459e490a0df91b510, type: 3}
-  healAmount: 30
+  healAmount: 60
 --- !u!114 &-2092710493234291339
 MonoBehaviour:
   m_ObjectHideFlags: 0

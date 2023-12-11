@@ -187,5 +187,7 @@ public class Ally : Unit
         if(newHealth > MaxHealth)
             newHealth = MaxHealth;
         health = newHealth;
+
+        unitCanvas.RedrawHealthBar();
     }
 }

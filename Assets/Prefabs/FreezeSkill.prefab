@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a783a12da7fe84f9ae6cde6755a0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaCost: 0
+  manaCost: 45
   radius: 2
   precastPrefab: {fileID: 3785730736501615612, guid: e4e20ed6fbc12664abb6728f26665410, type: 3}
   damage: 15
-  stunDuration: 3
+  stunDuration: 2.5
 --- !u!114 &8342503461988798162
 MonoBehaviour:
   m_ObjectHideFlags: 0

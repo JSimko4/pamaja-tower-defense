@@ -52,6 +52,7 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
             return;
         }
 
+        GameManager.Instance.Gold -= ally.Price;
         ally.startTile = LevelManager.Instance.End;
         ally.destinationTile = Ally.GatherTile;
         prefabInstance.transform.position = SpawnPosition;
