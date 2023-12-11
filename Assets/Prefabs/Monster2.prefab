@@ -174,13 +174,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.4
-  health: 100
+  health: 160
   damage: 25
   attackCooldown: 1
   destinationTile: {fileID: 0}
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
-  goldReward: 20
+  goldReward: 5
   fightingAlly: {fileID: 0}
 --- !u!95 &-1512120971375026449
 Animator:

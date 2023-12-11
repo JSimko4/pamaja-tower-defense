@@ -146,13 +146,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.8
-  health: 10000
-  damage: 200
+  health: 150
+  damage: 5
   attackCooldown: 1
   destinationTile: {fileID: 0}
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
-  price: 0
+  price: 25
   maxFightCapacity: 2
   MonstersInRange: []
   FightingMonsters: []

@@ -145,14 +145,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfbabff8b56c2a4197ff55d7efd31ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 100
-  damage: 50
+  speed: 2.2
+  health: 75
+  damage: 12
   attackCooldown: 1
   destinationTile: {fileID: 0}
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
-  price: 0
+  price: 40
   maxFightCapacity: 2
   MonstersInRange: []
   FightingMonsters: []
