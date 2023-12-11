@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,7 +8,8 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 {
     [SerializeField]
     private GameObject towerPrefab;
-
+    [SerializeField]
+    private TextMeshProUGUI hoverText;
     public GameObject TowerPrefab
     {
         get
@@ -27,7 +29,12 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
     void Start()
     {
-        
+        prefabInstance = Instantiate(towerPrefab);
+        prefabInstance.SetActive(false);
+        Tower tower = prefabInstance.GetComponentInChildren<Tower>();
+        hoverText.text = $"{tower.Price} g.";
+        if (hoverText != null)
+            hoverText.enabled = false;
     }
 
     // Update is called once per frame
@@ -47,6 +54,8 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
         UIManager.Instance.HideTowersPanel();
 
         prefabInstance = null;
+        if (hoverText != null)
+            hoverText.enabled = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -57,11 +66,19 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
         prefabInstance.SetActive(true);
         prefabInstance.transform.position = SpawnPosition;
 
+
+        if (hoverText != null)
+            hoverText.enabled = true;
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if(prefabInstance)
             prefabInstance.SetActive(false);
+
+
+        if (hoverText != null)
+            hoverText.enabled = false;
     }
 }

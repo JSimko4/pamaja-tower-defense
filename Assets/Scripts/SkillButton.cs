@@ -1,15 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class SkillButton : MonoBehaviour, IPointerClickHandler
+using UnityEngine.UI;
+public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
     private GameObject skillPrefab;
-
+    [SerializeField]
+    private TextMeshProUGUI hoverText;
     public static GameObject ClickedSkillPrefab { get; set; }
+    public GameObject SkillPrefab
+    {
+        get
+        {
+            return skillPrefab;
+        }
+    }
+    private GameObject prefabInstance;
 
+    void Start()
+    {
+        prefabInstance = Instantiate(skillPrefab);
+        prefabInstance.SetActive(false);
+        Skill skill = prefabInstance.GetComponentInChildren<Skill>();
+        hoverText.text = $"{skill.ManaCost} m.";
+        if (hoverText != null)
+            hoverText.enabled = false;
+    }
     public static void SelectSpell(GameObject prefab)
     {
         Skill skill = prefab.GetComponent<Skill>();
@@ -42,5 +61,17 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         SelectSpell(skillPrefab);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (hoverText != null)
+            hoverText.enabled = true; // Show the hover text
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (hoverText != null)
+            hoverText.enabled = false; // Hide the hover text
     }
 }
