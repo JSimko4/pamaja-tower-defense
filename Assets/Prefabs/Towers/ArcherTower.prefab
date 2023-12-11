@@ -220,9 +220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  damage: 3
+  damage: 2
   attackCooldown: 0.6
-  price: 5
+  price: 7
   projectileSpeed: 5
   projectilePrefab: {fileID: 2666235717455547974, guid: 9f9935c2388bb2144a9f8b936a71fbd4, type: 3}
   arrowTargetsCount: 3
