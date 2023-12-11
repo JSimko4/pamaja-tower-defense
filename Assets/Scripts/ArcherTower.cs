@@ -6,9 +6,21 @@ using UnityEngine;
 public class ArcherTower : Tower
 {
     [SerializeField]
-    private int arrowTargetsCount;
+    private int upgradedTotalTargets;
 
-    public List<Monster> Targets { get => MonstersInRange.Count > 0 ? MonstersInRange.GetRange(0, Mathf.Min(MonstersInRange.Count, arrowTargetsCount)) : null; }
+    [SerializeField]
+    private int totalTargets;
+
+    public List<Monster> Targets { get => MonstersInRange.Count > 0 ? MonstersInRange.GetRange(0, Mathf.Min(MonstersInRange.Count, totalTargets)) : null; }
+
+    public override bool Upgrade()
+    {
+        bool wasUpgraded = base.Upgrade();
+        if (!wasUpgraded) return false;
+
+        totalTargets = upgradedTotalTargets;
+        return true;
+    }
 
     protected override void Attack()
     {

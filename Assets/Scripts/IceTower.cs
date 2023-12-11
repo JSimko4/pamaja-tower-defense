@@ -8,6 +8,18 @@ public class IceTower : Tower
     [SerializeField]
     private int slowAmountPercentage;
 
+    [SerializeField]
+    private int upgradeSlowAmountPercentage;
+
+    public override bool Upgrade()
+    {
+        bool wasUpgraded = base.Upgrade();
+        if (!wasUpgraded) return false;
+
+        slowAmountPercentage = upgradeSlowAmountPercentage;
+        return true;
+    }
+
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Enter");

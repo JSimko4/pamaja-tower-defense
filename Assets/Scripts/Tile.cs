@@ -76,9 +76,20 @@ public class Tile : MonoBehaviour
             return;
         }
 
+        // TODO show tower range, tower tooltip...
         if (Tower)
         {
-            // TODO show tower range, tower tooltip...
+            // UPGRADE TOWER ON TOWER CLICK UNTIL THE UI IS IMPLEMENTED
+            Tower.Upgrade();
+            /////
+
+
+            ///////////////////
+            // Sell tower logic
+            // Tower.Sell();
+            // Tower = null;
+            //////////////////
+
             return;
         }
 

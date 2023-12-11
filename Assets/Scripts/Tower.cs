@@ -22,11 +22,28 @@ public class Tower : MonoBehaviour
     [SerializeField]
     private GameObject projectilePrefab;
 
+    // UPGRADE
+    [SerializeField]
+    private int upgradePrice;
+
+    [SerializeField]
+    private float upgradedRange;
+
+    [SerializeField]
+    private int upgradedDamage;
+
+    private bool isUpgraded;
+
     public float ProjectileSpeed { get => projectileSpeed; }
     public int Price { get => price; }
     public float Range { get => range; }
 
     public int Damage { get => damage; }
+
+    public bool IsUpgraded { get => isUpgraded; }
+    public int UpgradePrice { get => upgradePrice; }
+    public float UpgradedRange { get => upgradedRange; }
+    public int UpgradedDamage { get => upgradedDamage; }
 
     public float AttackCooldown { get => attackCooldown; }
 
@@ -44,6 +61,31 @@ public class Tower : MonoBehaviour
     private bool isPlaced = false;
 
     private SpriteRenderer spriteRenderer;
+
+    // Returns false if player does not have enough gold to upgrade or tower is upgraded already
+    public virtual bool Upgrade()
+    {
+        if (GameManager.Instance.Gold < upgradePrice || isUpgraded) return false;
+
+        GameManager.Instance.Gold -= upgradePrice;
+        range = upgradedRange;
+        damage = upgradedDamage;
+        price += upgradePrice;
+        isUpgraded = true;
+        RangeRescale();
+
+        return true;
+    }
+
+    public void Sell()
+    {
+        float sellPenalty = 0.3f;
+        int sellingPrice = (int)(Price * (1- sellPenalty));
+        GameManager.Instance.Gold += sellingPrice;
+
+        // Destroy parent object which contains the tower range script (tower logic) and its sprite
+        Destroy(transform.parent.gameObject);
+    }
     public void ToggleRangeVisible(bool value)
     {
         if(!spriteRenderer)
@@ -70,6 +112,7 @@ public class Tower : MonoBehaviour
     {
         MonstersInRange = new List<Monster>();
         isPlaced = false;
+        isUpgraded = false;
         RangeRescale();
     }
 

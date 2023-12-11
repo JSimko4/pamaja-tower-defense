@@ -225,6 +225,9 @@ MonoBehaviour:
   price: 10
   projectileSpeed: 8
   projectilePrefab: {fileID: 2666235717455547974, guid: cc379a21123cefb4fa0208712f5bfda3, type: 3}
+  upgradePrice: 25
+  upgradedRange: 9
+  upgradedDamage: 32
 --- !u!1 &7176237453703782838
 GameObject:
   m_ObjectHideFlags: 0
