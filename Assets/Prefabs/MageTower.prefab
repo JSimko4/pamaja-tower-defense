@@ -218,9 +218,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  damage: 5
+  damage: 6
   attackCooldown: 1
-  price: 0
+  price: 15
   projectileSpeed: 6
   projectilePrefab: {fileID: 2375027761618853406, guid: 81c6ba77e242c0c4d87508f6ee91732e, type: 3}
   splashRange: 1

@@ -219,10 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7e1319dfb1f9841a907cb4849bfca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 8
-  damage: 10
-  attackCooldown: 1.5
-  price: 0
+  range: 7
+  damage: 16
+  attackCooldown: 2.2
+  price: 10
   projectileSpeed: 8
   projectilePrefab: {fileID: 2666235717455547974, guid: cc379a21123cefb4fa0208712f5bfda3, type: 3}
 --- !u!1 &7176237453703782838

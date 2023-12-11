@@ -50,7 +50,6 @@ public class GameManager : Singleton<GameManager>
         if (GameLost)
         {
             UIManager.Instance.ShowLoseScreen();
-            Debug.Log("TODO: Game lost - show restart screen");
         }
         // Finished wave
         else if (!WaveActive && waveStarted)
@@ -58,7 +57,6 @@ public class GameManager : Singleton<GameManager>
             if (currentWave == TotalWaves) // If it was last wave
             {
                 UIManager.Instance.ShowWinScreen();
-                Debug.Log("TODO: All waves done - back to main menu or something like that");
             }
             else // Give mana reward for finishing wave it isnt the last wave
             {

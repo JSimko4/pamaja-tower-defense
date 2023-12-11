@@ -173,14 +173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb976d8bf841104cb2e2c06dc0e892a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.4
-  health: 100
-  damage: 25
+  speed: 2
+  health: 60
+  damage: 5
   attackCooldown: 1
   destinationTile: {fileID: 0}
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
-  goldReward: 10
+  goldReward: 2
   fightingAlly: {fileID: 0}
 --- !u!95 &1724158924309975868
 Animator:
