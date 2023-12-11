@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5e0862ee70ab04cb397a87e8c21c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaCost: 0
+  manaCost: 65
   radius: 2
   precastPrefab: {fileID: 4898889282152799856, guid: 107635beb2012c54d80d8449254b5b00, type: 3}
-  damage: 150
+  damage: 90
   startHeight: 4
   speed: 3
   explosionPrefab: {fileID: 2794172660966646618, guid: 86baf263637562246a241500d35d90df, type: 3}
