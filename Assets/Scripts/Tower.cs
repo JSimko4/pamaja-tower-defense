@@ -61,6 +61,7 @@ public class Tower : MonoBehaviour
     private bool isPlaced = false;
 
     private SpriteRenderer spriteRenderer;
+    private GameObject upgradeStar;
 
     // Returns false if player does not have enough gold to upgrade or tower is upgraded already
     public virtual bool Upgrade()
@@ -68,10 +69,13 @@ public class Tower : MonoBehaviour
         if (GameManager.Instance.Gold < upgradePrice || isUpgraded) return false;
 
         GameManager.Instance.Gold -= upgradePrice;
+
         range = upgradedRange;
         damage = upgradedDamage;
         price += upgradePrice;
         isUpgraded = true;
+
+        upgradeStar.SetActive(true);
         RangeRescale();
 
         return true;
@@ -114,6 +118,10 @@ public class Tower : MonoBehaviour
         isPlaced = false;
         isUpgraded = false;
         RangeRescale();
+
+        Transform findUpgradeStar = transform.parent.Find("upgradeStar");
+        upgradeStar = findUpgradeStar.gameObject;
+        upgradeStar.SetActive(false);
     }
 
     // Update is called once per frame
