@@ -13,6 +13,10 @@ public class MusicToggle : MonoBehaviour
     {
         // Get the Image component from the button
         buttonImage = GetComponent<Image>();
+        if(GameSettings.IsMusicOn == false)
+        {
+            musicPlayer.Stop();
+        }
         UpdateIcon();  // Set the correct icon based on whether music is playing
     }
 
@@ -22,10 +26,12 @@ public class MusicToggle : MonoBehaviour
         if (musicPlayer.isPlaying)
         {
             musicPlayer.Stop();
+            GameSettings.IsMusicOn = false;
         }
         else
         {
             musicPlayer.Play();
+            GameSettings.IsMusicOn = true;
         }
 
         // Update the button icon
