@@ -154,6 +154,7 @@ MonoBehaviour:
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
   price: 20
+  allyName: Elf Warrior
   maxFightCapacity: 2
   MonstersInRange: []
   FightingMonsters: []

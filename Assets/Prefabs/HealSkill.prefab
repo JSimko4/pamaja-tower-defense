@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCost: 25
+  skillName: Heal skill
   radius: 2
   precastPrefab: {fileID: 5987870913528950193, guid: 23ded2f3012917d459e490a0df91b510, type: 3}
   healAmount: 60

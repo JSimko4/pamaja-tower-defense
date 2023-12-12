@@ -24,7 +24,7 @@ public class Tile : MonoBehaviour
     public bool IsEmpty { get => TileType == EmptyTileType; }
 
 
-    private Color32 defaultColor = new Color32(151, 214, 49, 255);
+    private static Color32 defaultColor = new Color32(151, 214, 49, 255);
     private Color32 hoveredColor = new Color32(100, 100, 200, 255);
 
     //get center of tile
@@ -62,16 +62,45 @@ public class Tile : MonoBehaviour
     {
         
     }
-
+    public static void towerUpgrade()
+    {
+        // UPGRADE TOWER ON TOWER CLICK UNTIL THE UI IS IMPLEMENTED
+        ClickedTile.Tower.ToggleRangeVisible(false);
+        ClickedTile.Tower.Upgrade();
+        UIManager.Instance.SetCurrentTowerText(ClickedTile.Tower.TowerName, ClickedTile.Tower.Damage, ClickedTile.Tower.Range, ClickedTile.Tower.AttackCooldown, ClickedTile.Tower.IsUpgraded);
+        UIManager.Instance.HideTowersPanel();
+        UIManager.Instance.HideTowerInfo();
+        ClickedTile.ColorTile(defaultColor);
+        ClickedTile = null;
+        return;
+    }
+    public static void towerSell()
+    {
+        ///////////////////
+        //Sell tower logic
+        ClickedTile.Tower.ToggleRangeVisible(false);
+        ClickedTile.Tower.Sell();
+        ClickedTile.Tower = null;
+        UIManager.Instance.HideTowersPanel();
+        UIManager.Instance.HideTowerInfo();
+        ClickedTile.ColorTile(defaultColor);
+        ClickedTile = null;
+        //////////////////
+        return;
+    }
 
     private void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
+        {
+ 
             return;
+        }
 
         // cast the spell
         if (SkillButton.ClickedSkillPrefab)
         {
+            UIManager.Instance.HideTowerInfo();
             SkillButton.CastSkill();
             return;
         }
@@ -79,20 +108,19 @@ public class Tile : MonoBehaviour
         // TODO show tower range, tower tooltip...
         if (Tower)
         {
-            // UPGRADE TOWER ON TOWER CLICK UNTIL THE UI IS IMPLEMENTED
-            Tower.Upgrade();
-            /////
+
+            UIManager.Instance.HideTowersPanel();
+            UIManager.Instance.SetCurrentTowerText(Tower.TowerName, Tower.Damage, Tower.Range, Tower.AttackCooldown, Tower.IsUpgraded);
+            UIManager.Instance.ShowTowerInfo();
+            
 
 
-            ///////////////////
-            // Sell tower logic
-            // Tower.Sell();
-            // Tower = null;
-            //////////////////
-
-            return;
         }
-
+        else
+        {
+            UIManager.Instance.HideTowerInfo();
+        }
+        
 
         // set gather point on this path tile
         if (!IsEmpty)
@@ -114,6 +142,10 @@ public class Tile : MonoBehaviour
         // if click on same tile twice or on not empty tile, hide tower panel
         if(ClickedTile == this || !IsEmpty)
         {
+            if (ClickedTile.Tower)
+            {
+                ClickedTile.Tower.ToggleRangeVisible(false);
+            }
             if(ClickedTile)
                 ClickedTile.ColorTile(defaultColor);
             ClickedTile = null;
@@ -122,11 +154,24 @@ public class Tile : MonoBehaviour
         }
         else // color clicked tile and show towers panel and set color of that tile
         {
-            if (ClickedTile)
+            if (ClickedTile) {
                 ClickedTile.ColorTile(defaultColor);
+                if (ClickedTile.Tower)
+                {
+                    ClickedTile.Tower.ToggleRangeVisible(false);
+                }
+            }
+                
             ClickedTile = this;
-
-            UIManager.Instance.ShowTowersPanel();
+            if (Tower)
+            {
+                Tower.ToggleRangeVisible(true);
+            }
+            else
+            {
+                UIManager.Instance.ShowTowersPanel();
+            }
+            
             ColorTile(hoveredColor);
         }
     }
@@ -143,11 +188,7 @@ public class Tile : MonoBehaviour
         if (ClickedTile)
             return;
 
-        if(Tower)
-        {
-            Tower.ToggleRangeVisible(true);
-            return;
-        }
+       
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
@@ -160,11 +201,7 @@ public class Tile : MonoBehaviour
         if (ClickedTile)
             return;
 
-        if (Tower)
-        {
-            Tower.ToggleRangeVisible(false);
-            return;
-        }
+      
 
         ColorTile(defaultColor);
     }

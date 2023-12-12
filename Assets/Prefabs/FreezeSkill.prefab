@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCost: 45
+  skillName: Freeze skill
   radius: 2
   precastPrefab: {fileID: 3785730736501615612, guid: e4e20ed6fbc12664abb6728f26665410, type: 3}
   damage: 15

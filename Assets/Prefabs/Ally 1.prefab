@@ -154,6 +154,7 @@ MonoBehaviour:
   startTile: {fileID: 0}
   nextTile: {fileID: 0}
   price: 25
+  allyName: Human Knight
   maxFightCapacity: 2
   MonstersInRange: []
   FightingMonsters: []

@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaCost: 65
+  skillName: Meteorit skill
   radius: 2
   precastPrefab: {fileID: 4898889282152799856, guid: 107635beb2012c54d80d8449254b5b00, type: 3}
   damage: 90

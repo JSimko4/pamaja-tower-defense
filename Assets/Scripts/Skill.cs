@@ -8,8 +8,10 @@ public class Skill : MonoBehaviour
     private int manaCost;
 
     [SerializeField]
+    private string skillName;
+    [SerializeField]
     private float radius;
-
+    public string SkillName { get => skillName; }
     [SerializeField]
     private GameObject precastPrefab;
 

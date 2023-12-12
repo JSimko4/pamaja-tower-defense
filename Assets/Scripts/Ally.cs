@@ -7,6 +7,8 @@ public class Ally : Unit
     private int price;
 
     [SerializeField]
+    private string allyName;
+    [SerializeField]
     private int maxFightCapacity;
 
     public List<Monster> MonstersInRange = new List<Monster>();
@@ -23,7 +25,7 @@ public class Ally : Unit
     private Animator animator;
 
     public int Price { get => price; }
-
+    public string AllyName { get => allyName; }
     public bool IsAtGatherTile { get => lastTile == GatherTile; }
     public Monster Target { get => FightingMonsters.Count > 0 ? FightingMonsters[0] : null; }
 

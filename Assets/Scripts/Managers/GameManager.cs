@@ -42,6 +42,7 @@ public class GameManager : Singleton<GameManager>
         totalLives = lives;
         UIManager.Instance.HideWinScreen();
         UIManager.Instance.HideLoseScreen();
+        UIManager.Instance.HideTowerInfo();
     }
 
     // Update is called once per frame

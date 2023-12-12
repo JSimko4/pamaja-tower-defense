@@ -35,7 +35,7 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         prefabInstance.SetActive(false);
         Ally ally = prefabInstance.GetComponentInChildren<Ally>();
         hoverText.text = $"{ally.Price} g.";
-        hoverTextInfo.text = $"{tower.TowerName}\n \nDamage: {tower.Damage}\nRange: {tower.Range}\nAttack speed: {tower.AttackCooldown}";
+        hoverTextInfo.text = $"{ally.AllyName}\n \nDamage: {ally.Damage}\nHealth: {ally.Health}\nAttack speed: {ally.AttackCooldown}\nSpeed: {ally.Speed}";
         if (hoverText != null)
             hoverText.enabled = false;
         if (hoverTextInfo != null)

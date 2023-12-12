@@ -30,7 +30,7 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
         prefabInstance.SetActive(false);
         Skill skill = prefabInstance.GetComponentInChildren<Skill>();
         hoverText.text = $"{skill.ManaCost} m.";
-        hoverTextInfo.text = $"{tower.TowerName}\n \nDamage: {tower.Damage}\nRange: {tower.Range}\nAttack speed: {tower.AttackCooldown}";
+        hoverTextInfo.text = $"{skill.SkillName}\n \nManacost: {skill.ManaCost}\nRadius: {skill.Radius}";
         if (hoverText != null)
             hoverText.enabled = false;
         if (hoverTextInfo != null)
@@ -45,7 +45,6 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
         var skillPrefabInstance = Instantiate(skill.PrecastPrefab);
         skillPrefabInstance.transform.localScale = new Vector3(skill.Radius, skill.Radius);
         ClickedSkillPrefab = prefab;
-
         Hover.Instance.SetHoverPrefabInstance(skillPrefabInstance);
     }
 
@@ -58,7 +57,7 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     public static void CastSkill()
     {
         var requiredMana = ClickedSkillPrefab.GetComponent<Skill>().ManaCost;
-
+        
         if (GameManager.Instance.Mana >= requiredMana)
         {
             GameManager.Instance.Mana -= requiredMana;

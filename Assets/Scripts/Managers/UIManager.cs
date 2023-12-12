@@ -7,9 +7,14 @@ public class UIManager : Singleton<UIManager>
 {
     [SerializeField]
     private GameObject towersPanel;
+    [SerializeField]
+    private GameObject upgradeButton;
 
     [SerializeField]
     private GameObject alliesPanel;
+
+    [SerializeField]
+    private GameObject currentTowerInfo;
 
     public GameObject TowersPanel { get => towersPanel; }
     public GameObject AlliesPanel { get => alliesPanel; }
@@ -35,6 +40,9 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private TextMeshProUGUI manaText;
 
+    [SerializeField]
+    private TextMeshProUGUI currentTowerText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +61,25 @@ public class UIManager : Singleton<UIManager>
 
     public void HideTowersPanel() {
         towersPanel.SetActive(false);    
+    }
+    public void ShowUpgradeButton()
+    {
+        upgradeButton.SetActive(true);
+    }
+
+    public void HideUpgradeButton()
+    {
+        upgradeButton.SetActive(false);
+    }
+
+    public void ShowTowerInfo()
+    {
+        currentTowerInfo.SetActive(true);
+    }
+
+    public void HideTowerInfo()
+    {
+        currentTowerInfo.SetActive(false);
     }
 
     public void ShowNextWaveButton()
@@ -104,4 +131,21 @@ public class UIManager : Singleton<UIManager>
     {
         manaText.text = mana.ToString();
     }
+
+    public void SetCurrentTowerText(string name, int damage, float range,float attackSpeed,bool upgraded)
+    {
+        if (upgraded)
+        {
+            HideUpgradeButton();
+            currentTowerText.text = $"{name}\n \nLevel: 2\nDamage: {damage}\nRange: {range}\nAttack speed: {attackSpeed}";
+        }
+            
+        else
+        {
+            ShowUpgradeButton();
+            currentTowerText.text = $"{name}\n \nLevel: 1\nDamage: {damage}\nRange: {range}\nAttack speed: {attackSpeed}";
+        }
+            
+    }
+
 }
