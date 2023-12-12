@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 7
+  towerName: Sniper Tower
   damage: 22
   attackCooldown: 2.2
   price: 10

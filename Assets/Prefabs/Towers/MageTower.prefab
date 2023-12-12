@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
+  towerName: Mage Tower
   damage: 6
   attackCooldown: 1
   price: 15

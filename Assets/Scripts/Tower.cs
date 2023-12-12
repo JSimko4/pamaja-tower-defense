@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+
     [SerializeField]
     private float range;
+
+    [SerializeField]
+    private string towerName;
 
     [SerializeField]
     private int damage;
@@ -37,7 +41,7 @@ public class Tower : MonoBehaviour
     public float ProjectileSpeed { get => projectileSpeed; }
     public int Price { get => price; }
     public float Range { get => range; }
-
+    public string TowerName { get => towerName; }
     public int Damage { get => damage; }
 
     public bool IsUpgraded { get => isUpgraded; }

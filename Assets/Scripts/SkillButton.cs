@@ -11,6 +11,10 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     [SerializeField]
     private TextMeshProUGUI hoverText;
     public static GameObject ClickedSkillPrefab { get; set; }
+    [SerializeField]
+    private TextMeshProUGUI hoverTextInfo;
+    [SerializeField]
+    private GameObject skillsInfo;
     public GameObject SkillPrefab
     {
         get
@@ -26,8 +30,14 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
         prefabInstance.SetActive(false);
         Skill skill = prefabInstance.GetComponentInChildren<Skill>();
         hoverText.text = $"{skill.ManaCost} m.";
+        hoverTextInfo.text = $"{tower.TowerName}\n \nDamage: {tower.Damage}\nRange: {tower.Range}\nAttack speed: {tower.AttackCooldown}";
         if (hoverText != null)
             hoverText.enabled = false;
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = false;
+            skillsInfo.SetActive(false);
+        }
     }
     public static void SelectSpell(GameObject prefab)
     {
@@ -61,17 +71,28 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
     public void OnPointerClick(PointerEventData eventData)
     {
         SelectSpell(skillPrefab);
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (hoverText != null)
             hoverText.enabled = true; // Show the hover text
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = true;
+            skillsInfo.SetActive(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (hoverText != null)
             hoverText.enabled = false; // Hide the hover text
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = false;
+            skillsInfo.SetActive(false);
+        }
     }
 }

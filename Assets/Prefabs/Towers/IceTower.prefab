@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 6
+  towerName: Ice Tower
   damage: 6
   attackCooldown: 1.5
   price: 10

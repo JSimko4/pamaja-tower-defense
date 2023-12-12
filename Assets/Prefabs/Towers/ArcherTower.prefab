@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
+  towerName: Archer Tower
   damage: 2
   attackCooldown: 0.6
   price: 7

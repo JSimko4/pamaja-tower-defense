@@ -10,6 +10,10 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
     private GameObject towerPrefab;
     [SerializeField]
     private TextMeshProUGUI hoverText;
+    [SerializeField]
+    private TextMeshProUGUI hoverTextInfo;
+    [SerializeField]
+    private GameObject towersInfo;
     public GameObject TowerPrefab
     {
         get
@@ -33,8 +37,14 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
         prefabInstance.SetActive(false);
         Tower tower = prefabInstance.GetComponentInChildren<Tower>();
         hoverText.text = $"{tower.Price} g.";
+        hoverTextInfo.text = $"{tower.TowerName}\n \nDamage: {tower.Damage}\nRange: {tower.Range}\nAttack speed: {tower.AttackCooldown}";
         if (hoverText != null)
             hoverText.enabled = false;
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = false;
+            towersInfo.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -56,6 +66,12 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
         prefabInstance = null;
         if (hoverText != null)
             hoverText.enabled = false;
+        if (hoverTextInfo != null)
+        { 
+            hoverTextInfo.enabled = false;
+            towersInfo.SetActive(false);
+        }
+            
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -69,7 +85,11 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
         if (hoverText != null)
             hoverText.enabled = true;
-
+        if (hoverTextInfo != null)
+        { 
+            hoverTextInfo.enabled = true;
+            towersInfo.SetActive(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -80,5 +100,10 @@ public class TowerButton : MonoBehaviour, IPointerClickHandler, IPointerExitHand
 
         if (hoverText != null)
             hoverText.enabled = false;
+        if (hoverTextInfo != null) 
+        { 
+            hoverTextInfo.enabled = false;
+            towersInfo.SetActive(false);
+        }
     }
 }

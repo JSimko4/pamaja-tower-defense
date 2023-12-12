@@ -10,6 +10,10 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     private GameObject allyPrefab;
     [SerializeField]
     private TextMeshProUGUI hoverText;
+    [SerializeField]
+    private TextMeshProUGUI hoverTextInfo;
+    [SerializeField]
+    private GameObject allyInfo;
     public GameObject AllyPrefab
     {
         get
@@ -31,8 +35,14 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
         prefabInstance.SetActive(false);
         Ally ally = prefabInstance.GetComponentInChildren<Ally>();
         hoverText.text = $"{ally.Price} g.";
+        hoverTextInfo.text = $"{tower.TowerName}\n \nDamage: {tower.Damage}\nRange: {tower.Range}\nAttack speed: {tower.AttackCooldown}";
         if (hoverText != null)
             hoverText.enabled = false;
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = false;
+            allyInfo.SetActive(false);
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -62,12 +72,23 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
     {
         if (hoverText != null)
             hoverText.enabled = true; // Show the hover text
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = true;
+            allyInfo.SetActive(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (hoverText != null)
             hoverText.enabled = false; // Hide the hover text
+
+        if (hoverTextInfo != null)
+        {
+            hoverTextInfo.enabled = false;
+            allyInfo.SetActive(false);
+        }
     }
 
 }
