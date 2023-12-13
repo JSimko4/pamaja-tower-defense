@@ -46,6 +46,13 @@ public class Ally : Unit
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.GameLost)
+        {
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("IsFighting", false);
+            return;
+        }
+
         // Add more monsters to fight if can fight aditional monsters
         // This is useful in cases when one of the enemies the ally was fighting with died
         // In this case we look for enemies in the box collider and start fighting them

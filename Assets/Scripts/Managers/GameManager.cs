@@ -59,7 +59,7 @@ public class GameManager : Singleton<GameManager>
             {
                 UIManager.Instance.ShowWinScreen();
             }
-            else // Give mana reward for finishing wave it isnt the last wave
+            else // Give mana reward for finishing wave if it isnt the last wave
             {
                 UIManager.Instance.ShowNextWaveButton();
                 Mana += waveManaReward;
