@@ -47,6 +47,8 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (GameManager.Instance.GameLost) return;
+
         spawnAlly(allyPrefab);
     }
 
@@ -70,6 +72,8 @@ public class AllyButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (GameManager.Instance.GameLost) return;
+
         if (hoverText != null)
             hoverText.enabled = true; // Show the hover text
         if (hoverTextInfo != null)

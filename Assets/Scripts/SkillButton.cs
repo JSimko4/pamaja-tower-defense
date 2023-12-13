@@ -69,12 +69,16 @@ public class SkillButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (GameManager.Instance.GameLost) return;
+
         SelectSpell(skillPrefab);
 
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (GameManager.Instance.GameLost) return;
+
         if (hoverText != null)
             hoverText.enabled = true; // Show the hover text
         if (hoverTextInfo != null)

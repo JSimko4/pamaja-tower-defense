@@ -32,6 +32,13 @@ public class Monster : Unit
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.GameLost)
+        {
+            animator.SetBool("IsMoving", false);
+            animator.SetBool("IsFighting", false);
+            return;
+        }
+
         // do not move when stunned
         if (isStunned)
         {

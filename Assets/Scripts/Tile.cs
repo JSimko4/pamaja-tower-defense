@@ -91,9 +91,10 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.GameLost) return;
+
         if (EventSystem.current.IsPointerOverGameObject())
         {
- 
             return;
         }
 
@@ -185,10 +186,10 @@ public class Tile : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (ClickedTile)
-            return;
+        if (GameManager.Instance.GameLost) return;
 
-       
+        if (ClickedTile)
+            return;       
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
@@ -200,8 +201,6 @@ public class Tile : MonoBehaviour
     {
         if (ClickedTile)
             return;
-
-      
 
         ColorTile(defaultColor);
     }

@@ -131,7 +131,9 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPlaced)
+        if (GameManager.Instance.GameLost) return;
+
+        if (isPlaced)
             Attack();
     }
     protected virtual void Attack()
