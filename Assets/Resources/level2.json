@@ -30,10 +30,15 @@
                     "startTilePositionIndex": 0,
                     "delayBeforeSpawnInSec": 0.1
                 },
-                                {
+                {
                     "monsterIndex": 0,
                     "startTilePositionIndex": 0,
                     "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
                 },
             ]
         },
