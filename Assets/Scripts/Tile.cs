@@ -67,7 +67,7 @@ public class Tile : MonoBehaviour
         // UPGRADE TOWER ON TOWER CLICK UNTIL THE UI IS IMPLEMENTED
         ClickedTile.Tower.ToggleRangeVisible(false);
         ClickedTile.Tower.Upgrade();
-        UIManager.Instance.SetCurrentTowerText(ClickedTile.Tower.TowerName, ClickedTile.Tower.Damage, ClickedTile.Tower.Range, ClickedTile.Tower.AttackCooldown, ClickedTile.Tower.IsUpgraded);
+        UIManager.Instance.SetCurrentTowerText(ClickedTile.Tower.TowerName, ClickedTile.Tower.Damage, ClickedTile.Tower.Range, ClickedTile.Tower.AttackCooldown, ClickedTile.Tower.IsUpgraded, ClickedTile.Tower.UpgradePrice);
         UIManager.Instance.HideTowersPanel();
         UIManager.Instance.HideTowerInfo();
         ClickedTile.ColorTile(defaultColor);
@@ -110,7 +110,7 @@ public class Tile : MonoBehaviour
         {
 
             UIManager.Instance.HideTowersPanel();
-            UIManager.Instance.SetCurrentTowerText(Tower.TowerName, Tower.Damage, Tower.Range, Tower.AttackCooldown, Tower.IsUpgraded);
+            UIManager.Instance.SetCurrentTowerText(Tower.TowerName, Tower.Damage, Tower.Range, Tower.AttackCooldown, Tower.IsUpgraded, Tower.UpgradePrice);
             UIManager.Instance.ShowTowerInfo();
             
 
@@ -142,13 +142,20 @@ public class Tile : MonoBehaviour
         // if click on same tile twice or on not empty tile, hide tower panel
         if(ClickedTile == this || !IsEmpty)
         {
-            if (ClickedTile.Tower)
-            {
-                ClickedTile.Tower.ToggleRangeVisible(false);
-            }
-            if(ClickedTile)
-                ClickedTile.ColorTile(defaultColor);
+            if (ClickedTile != null) { 
+
+                if (ClickedTile.Tower)
+                {
+                    ClickedTile.Tower.ToggleRangeVisible(false);
+                }
+                if (ClickedTile)
+                {
+
+                    ClickedTile.ColorTile(defaultColor);
+                }
+            
             ClickedTile = null;
+            }
 
             UIManager.Instance.HideTowersPanel();
         }

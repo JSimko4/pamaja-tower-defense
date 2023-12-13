@@ -132,18 +132,18 @@ public class UIManager : Singleton<UIManager>
         manaText.text = mana.ToString();
     }
 
-    public void SetCurrentTowerText(string name, int damage, float range,float attackSpeed,bool upgraded)
+    public void SetCurrentTowerText(string name, int damage, float range,float attackSpeed,bool upgraded, int upgradePrice)
     {
         if (upgraded)
         {
             HideUpgradeButton();
-            currentTowerText.text = $"{name}\n \nLevel: 2\nDamage: {damage}\nRange: {range}\nAttack speed: {attackSpeed}";
+            currentTowerText.text = $"{name}\n \nLevel: 2\nDamage: {damage}\nRange: {range}\nAttack Cooldown: {attackSpeed}";
         }
             
         else
         {
             ShowUpgradeButton();
-            currentTowerText.text = $"{name}\n \nLevel: 1\nDamage: {damage}\nRange: {range}\nAttack speed: {attackSpeed}";
+            currentTowerText.text = $"{name}\nLevel: 1\nDamage: {damage}\nRange: {range}\nAttack Cooldown: {attackSpeed}\nUpgrade Price: {upgradePrice}";
         }
             
     }
