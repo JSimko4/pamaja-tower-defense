@@ -3095,7 +3095,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1050719653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1243652453}
+        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+        m_MethodName: towerSell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1050719653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,6 +4325,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243171832}
   m_CullTransparentMesh: 1
+--- !u!1 &1243652452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1243652454}
+  - component: {fileID: 1243652453}
+  m_Layer: 0
+  m_Name: UpgradeSellLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1243652453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243652452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a1f4d4f07a1ee4babdcdd01730b775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GatherTileSprite: {fileID: 0}
+  DefaultSprite: {fileID: 0}
+  mapCoordinates: {x: 0, y: 0}
+  PresentAllies: []
+--- !u!4 &1243652454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243652452}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 530.926, y: -428.20465, z: -0.4500851}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1823682414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1251894833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6532,9 +6592,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 2aeae4217eb5eae49bd73d1b19411721, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1243652453}
+        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+        m_MethodName: towerUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6859,6 +6919,7 @@ RectTransform:
   - {fileID: 1501284821}
   - {fileID: 18653041}
   - {fileID: 1350532386}
+  - {fileID: 1243652454}
   - {fileID: 2034001282}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7629,6 +7690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towersPanel: {fileID: 1463005797}
+  upgradeButton: {fileID: 1796220541}
   alliesPanel: {fileID: 1260653341}
   currentTowerInfo: {fileID: 2034001281}
   nextWaveButton: {fileID: 647994089}
