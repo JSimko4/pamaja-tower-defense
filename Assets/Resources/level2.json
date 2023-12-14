@@ -38,18 +38,30 @@
                     "startTilePositionIndex": 0,
                     "delayBeforeSpawnInSec": 0.1
                 },
-
                 {
                     "monsterIndex": 0,
                     "startTilePositionIndex": 0,
                     "delayBeforeSpawnInSec": 0.4
                 },
-
-
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.8
+                },
                 {
                     "monsterIndex": 0,
                     "startTilePositionIndex": 1,
-                    "delayBeforeSpawnInSec": 3.5
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.5
                 }
             ]
         },

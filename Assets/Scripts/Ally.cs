@@ -60,8 +60,8 @@ public class Ally : Unit
         {
             foreach (Monster monster in MonstersInRange.GetRange(0, Mathf.Min(MonstersInRange.Count, maxFightCapacity)))
             {
-                // Check if the monster is not already in the FightingMonsters list
-                if (!FightingMonsters.Contains(monster))
+                // Check if someone isnt fighting this monster already
+                if (monster.fightingAlly == null)
                 {
                     FightingMonsters.Add(monster);
                     monster.fightingAlly = this;
@@ -168,7 +168,7 @@ public class Ally : Unit
         {
             Monster monster = other.GetComponent<Monster>();
 
-            if (CanFightMoreMonsters && IsAtGatherTile)
+            if (CanFightMoreMonsters && IsAtGatherTile && monster.fightingAlly == null)
             {
                 FightingMonsters.Add(monster);
                 monster.fightingAlly = this;
