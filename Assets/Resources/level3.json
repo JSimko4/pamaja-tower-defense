@@ -16,6 +16,10 @@
             0,
             13,
         ],
+        [
+            5,
+            0,
+        ]
     ],
     "endTilePosition": [
         9,
@@ -23,14 +27,865 @@
     ],
     "waves": [
         {
-            "manaReward": 50,
+            "manaReward": 10,
             "spawns": [
                 {
                     "monsterIndex": 0,
                     "startTilePositionIndex": 0,
                     "delayBeforeSpawnInSec": 0.1
                 },
+
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+
+
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.5
+                }
             ]
         },
+        {
+            "manaReward": 20,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.5
+                }
+            ]
+        },
+        {
+            "manaReward": 20,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.25
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.5
+                }
+            ]
+        },
+        {
+            "manaReward": 20,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.25
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 10
+                }
+            ]
+        },
+        {
+            "manaReward": 20,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.25
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.35
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.45
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 10.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 11.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 13.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 14.9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 14.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 16.2
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 16.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 16.6
+                },
+
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.4
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.6
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.8
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 19.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 18.4
+                }
+            ]
+        },
+        {
+            "manaReward": 20,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.25
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 10
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.25
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 10
+                }
+            ]
+        },
+        {
+            "manaReward": 20,
+            "spawns": [
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.25
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.35
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.45
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.2
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 0.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 1
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 3.25
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 3.5
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 8.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.15
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 8.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 10.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 11.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 13.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 0,
+                    "delayBeforeSpawnInSec": 14.9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 14.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 15.9
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 16.2
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 16.4
+                },
+                {
+                    "monsterIndex": 1,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 16.6
+                },
+
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.1
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.4
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.5
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.6
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.8
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 17.9
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 19.3
+                },
+                {
+                    "monsterIndex": 0,
+                    "startTilePositionIndex": 1,
+                    "delayBeforeSpawnInSec": 18.4
+                }
+            ]
+        }
     ]
 }
