@@ -1,3 +1,4 @@
+using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,8 +48,9 @@ public class LevelManager : Singleton<LevelManager>
     void LoadMap(string level)
     {
         // Load level data from JSON
-        string jsonFilePath = $"Assets/Resources/{level}.json";
-        string jsonText = System.IO.File.ReadAllText(jsonFilePath);
+ 
+        string jsonFilePath = System.IO.Path.Combine(Application.streamingAssetsPath, $"{level}.json");
+        string jsonText = File.ReadAllText(jsonFilePath);
         LevelData levelData = JsonConvert.DeserializeObject<LevelData>(jsonText);
         levelLoaded = level;
         // Load waves to GameManager

@@ -17,6 +17,8 @@ public class Path
         currentTileIndex = 0;
     }
 
+
+
     public Tile GetNextTile()
     {
         if (currentTileIndex < tiles.Count)
